@@ -1,0 +1,42 @@
+export enum ActionType {
+	CLEAR_FILM = 'CLEAR_FILM',
+	GET_FILM = 'GET_FILM',
+	GET_FILMS = 'GET_FILMS',
+	UPDATE_FILM = 'UPDATE_FILM',
+	FILM_ERROR = 'FILM_ERROR',
+	REGISTER_SUCCESS = 'REGISTER_SUCCESS',
+	REGISTER_FAIL = 'REGISTER_FAIL',
+	USER_LOADED = 'USER_LOADED',
+	AUTH_ERROR = 'AUTH_ERROR',
+	LOGIN_SUCCESS = 'LOGIN_SUCCESS',
+	LOGIN_FAIL = 'LOGIN_FAIL',
+	LOGOUT = 'LOGOUT',
+	UPDATE_USER = 'UPDATE_USER',
+	USER_ERROR = 'USER_ERROR',
+}
+
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+// export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+// export const REGISTER_FAIL = 'REGISTER_FAIL';
+// export const USER_LOADED = 'USER_LOADED';
+// export const AUTH_ERROR = 'AUTH_ERROR';
+// export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+// export const LOGIN_FAIL = 'LOGIN_FAIL';
+// export const LOGOUT = 'LOGOUT';
+// export const GET_PROFILE = 'GET_PROFILE';
+// export const PROFILE_ERROR = 'PROFILE_ERROR';
+// export const GET_PROFILES = 'GET_PROFILES';
+// export const GET_REPOS = 'GET_REPOS';
+// export const UPDATE_FILM = 'UPDATE_FILM';
+// export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+// export const CLEAR_PROFILE = 'CLEAR_PROFILE';
+// export const ACCOUNT_DELETED = 'ACCOUNT_DELETED';
+// export const UPDATE_USER = 'UPDATE_USER';
+// export const USER_ERROR = 'USER_ERROR';
+
+// export const CLEAR_FILM = 'CLEAR_FILM';
+// export const GET_FILM = 'GET_FILM';
+// export const GET_FILMS = 'GET_FILMS';
+// export const DELETE_FILM = 'DELETE_FILM';
+// export const FILM_ERROR = 'FILM_ERROR';

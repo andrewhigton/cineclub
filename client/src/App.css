@@ -1,0 +1,534 @@
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  max-width: 102vw;  
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.4);
+  max-width: 97%;
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  overflow-x: hidden;
+}
+
+a {
+  color: #864747;
+}
+
+.welcome-message {
+  font-size: 1.7em;
+  margin-left: 30px;
+  margin-bottom: 30px; 
+  font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (max-width: 1200px) {  
+  body .inset-text {
+  top: 530px;
+  }
+
+  .dropdown {
+    position: fixed !important;
+    right: 5vw;
+  }
+
+  ._3 {
+    display: none;
+  }
+  
+/*  .hamburgerDiv {
+  display: none;
+  margin-top: -7vh;
+  }
+
+  .hamburgDiv-loggedin {
+  display: none;
+  }
+
+  .dropdown {
+    display: block;
+  }*/
+}
+
+@media screen and (max-width: 1100px) {  
+
+  .top-row {
+  display: none
+  }
+
+  /*.dropdown {
+    position: absolute;
+    right: 0;
+
+    float: right;
+    font-size: 0.8em;
+    position: absolute !important;
+    background-color: white;
+    width: 100%;
+    left: 1vw;
+    top: 6vh;
+    margin-left: -1vw;
+    margin-top: 0vh;
+    z-index: 1;
+  }*/
+  
+ /* .hamburgerDiv {
+  display: block;
+  margin-top: -4.5vh;
+  }
+
+  .hamburgDiv-loggedin {
+  display: block;
+  }
+*/
+}
+
+@media screen and (max-width: 1058px) {  
+  
+  ._3 {
+    display: block;
+  }
+  
+  .full-screen {
+      background-color: black;
+  }
+
+/*  .dropdown {
+    position: fixed !important;
+    right: 5vw;
+  }
+*/
+}
+
+@media screen and (max-width: 999px) {  
+  
+  body .inset-text {
+    font-size: 15px;
+    top: 510px;
+  }
+
+  .full-screen {
+     display: none;
+  }
+
+  .carousel {
+    max-height: 400px !important;
+  }
+}
+
+@media screen and (max-width: 900px) {  
+  
+  body .inset-text {
+    font-size: 14px;
+    top: 500px;
+  }
+  
+  .arrows {
+  font-size: 30px;
+  top: 450px;
+  left: 340px;
+  }
+
+/*  .reg-dropdown {
+    margin-left: 0.5vw;
+  }
+*/
+}
+
+@media screen and (max-width: 770px) {  
+  
+  body .inset-text {
+  font-size: 15px;
+  top: 440px;
+  }
+
+  .dropdown {
+    position: fixed !important;
+    right: 3vw;
+    text-align: right;
+    background-color: white;
+    top: 7vh;
+    z-index: 2;
+    margin-top: 3vh;
+    border: 1px solid inset red;
+    border-color: red;
+    padding: 3vw;
+}
+
+
+/*  .register, .login, .howitworks {
+    display: none;
+  }
+*/
+/*  .hamburgDiv-loggedin { 
+    margin-top: -4.5vh;
+  }
+
+  .reg-dropdown {
+    margin-left: 1vw;
+  }
+
+  .how-loggedin, .films-tickets-link, .logout  {
+    display: none;
+  }*/
+
+  body .image-slide {
+    top: -150px; 
+  }
+
+  /*.navbar-left {
+    margin-top: -45px;
+}*/
+
+}
+
+@media screen and (max-width: 680px) {  
+body .image-slide {
+    top: -180px; 
+  }
+  
+/*body .hamburgerDiv {
+    margin-top: -11vh;
+  }*/
+
+body .inset-text {
+  font-size: 15px;
+  top: 410px;
+  }
+
+/*body .hamburger {
+  display: block;
+  }
+*/
+body h1 {
+  font-size: 2.3rem;
+  }  
+}
+
+@media screen and (max-width: 562px) {  
+ 
+  body .inset-text {
+  font-size: 11px;
+  top: 410px;
+  }
+
+
+  /*body .navbar {
+    height: 3vh;
+    margin-top: 30px;
+  }
+*/
+  body h1 {
+  font-size: 0.85em;
+  margin-top: -1.2vh;
+  }
+
+/*  .reg-dropdown {
+  margin-left: 1vw;
+  }
+*/
+  .contacts-link {
+  display: none;
+}
+
+  body .main-title-subdeck {
+    display: none;
+  }
+  
+  .carousel {
+    max-height: 230px !important;
+  }
+
+/*  .hamburgDiv-loggedin {
+    margin-top: -7.2vh;
+  }
+
+  .hamburger { 
+    width: 22px;
+    height: 3px;
+    margin: 3px;
+    }
+
+  .dropdown {
+    top: 1vh;
+  }*/
+
+  /*.navbar {
+    height: 50px;
+  }
+*/
+  /*.navbar-left {
+    margin-top: -8vh;
+  }
+*/
+/*  .reg-dropdown, .log-dropdown, .how-dropdown, .buy-dropdown, .buytickets-dropdown  {
+    font-size: 0.8em;
+    margin-right: 0.1vw;
+  }
+*/  
+  .welcome-message {
+  margin-top: 15px;
+}
+  
+  .carousel {
+    margin-top: 1.7vh;
+    max-height: 190px !important;
+  }
+}
+
+@media screen and (max-width: 476px) {  
+
+  body .navbar-brand {
+    font-size: 1.2em;  
+  }
+}
+
+
+@media screen and (max-width: 380px) {  
+  body .inset-text {
+  left: 18px;
+  font-size: 9px;
+  top: 400px;
+}
+
+  body .all-screenings {
+  }
+
+ /*.navbar {
+    width: 90%;
+    margin-top: 10px !important;
+    margin-bottom: 22px;
+  }*/
+  
+  body .navbar-brand {
+    font-size: 1.1em;  
+  }
+
+  body h1 {
+  font-size: 0.7em;
+  margin-top: 1.2vh;
+  }
+
+ 
+  body .image-slide {
+    top: -250px; 
+  }
+
+  .carousel {
+    max-height: 190px !important;
+  }
+
+
+}
+
+@media screen and (max-width: 362px) {  
+
+.dark-overlay {
+  margin-top: 30px;
+}
+
+body .navbar-brand {
+    font-size: 1em;  
+  }
+
+body .inset-text {
+  left: 16px;
+  top: 400px;
+}
+
+.film {
+    margin-left: -5px !important;
+}
+
+.films-list {
+  border: 0px #864747 solid !important; 
+}
+
+.singleTicket {
+  margin-left: -12px !important;
+
+}
+
+/*
+.log-dropdown, .buy-dropdown, .how-dropdown, .buytickets-dropdown {
+    margin-right: -5vw;
+}
+
+*/
+body h1 {
+  font-size: 0.6em;
+  margin-top: -1vh;;
+  }
+  
+body .image-slide {
+    top: -270px; 
+  }
+}
+
+@media screen and (max-width: 338px) {  
+body .inset-text {
+  left: 16px;
+  font-size: 8px;
+  top: 400px;
+}
+
+  body .navbar-brand {
+    font-size: 0.9em;  
+  }
+
+
+ body h1 {
+  font-size: 0.5em;  
+  }
+
+  .film {
+    margin-right: -2vw;
+  }
+
+  .carousel {
+    max-height: 150px !important;
+  }
+  
+}
+
+@media screen and (max-width: 290px) {  
+ body .inset-text {
+  left: 14px;
+  top: 390px;
+}
+
+ /*.navbar {
+    max-height: 30px;
+  }
+
+ .navbar-left {
+    width: 90%;
+  }
+
+  .navbar-right {
+    width: 10%;
+  }*/
+
+ h1 {
+  font-size: 0.45em;
+  line-height: 1.1;
+  margin-top: 16px;
+  }
+  
+  body .image-slide {
+    top: -300px; 
+  }
+
+/*  body .hamburgerDiv {
+    margin-top: -19vh;
+    margin-right: -2.5em;
+  }*/
+}
+
+@media screen and (max-width: 290px) {  
+/*.navbar-left {
+    width: 100%;  
+  }*/
+}
+
+
+/*ends media screens*/
+
+
+.landing {
+  height: 100%;
+  width: 100%;
+}
+
+.films-link {
+  font-size: 22px;
+}
+
+.landing-page-titles {
+  color: #fff;  
+  margin: auto;
+  display: flex;
+  float: left;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.guide-link {
+  position: fixed;
+  margin-top: 35px;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.4rem;
+  margin-top: 1.7rem;
+  width: auto;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.no-account {
+  font-size: 25px;
+  margin-left: 1.3rem;
+  margin-top: 1.7rem;
+}
+
+.reg {
+  color: white;
+}
+
+img {
+    width: 264px;
+    object-fit: cover;
+    max-height: 148px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.create-film-title {
+  margin-left: 2vw;
+}

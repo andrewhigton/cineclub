@@ -1,0 +1,223 @@
+a  {
+  color: #864747 !important;
+}
+
+.navbar-light {
+    border-color: white;
+}
+
+.navbar {
+    /*height: 100px;*/
+    font-family: 'Limelight', cursive;
+    /*background-color: white;*/
+    /*margin-top: 1vh;*/
+  }
+
+body .navbar-brand {
+    font-size: 1.7em;  
+  }
+
+/*.dropdown {
+    position: fixed !important;
+    right: 5vw;
+    text-align: right;
+    background-color: white;
+    top: 7vh;
+    z-index: 2;
+    margin-top: 3vh;
+    border: solid 1px;
+    padding: 3vw;
+}
+*/
+.howitworks {
+    padding-left: 2vh !important;
+}
+/*h1 {
+    font-size: 1vw;
+    flex-wrap: wrap;
+  }*/
+
+
+/*.navbar-left {
+  display: block;
+  float: left;
+  margin-top: -60px;
+}
+
+.navbar-right {
+  margin-top: 4vh;
+  font-size: 1.2em;
+  font-family: 'Raleway', sans-serif;
+}
+
+.top-row {
+    margin-top: 0vh;
+    margin-right: -3vw;
+    display: flex;
+  }*/
+
+/*.navbar a {
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+}*/
+
+/*.main-title { 
+  font-size: 30px;
+  color: #864747;
+}*/
+
+/*.main-title-subdeck {
+  font-size: 1.6em;
+  margin-top: -50px;
+  }
+*/
+
+
+
+/*.dropdown {
+    margin-top: -7.8vh;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+  }*/
+
+/*.register, .login, .howitworks, .buy-tickets-link, .buytickets-dropdown {
+    margin-right: 0.1vw;
+    display: inline-flex;
+    margin-top: -7.8vh;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+  }
+
+.reg-dropdown, .log-dropdown, .buy-dropdown, .how-dropdown, .buytickets-dropdown {
+    margin-right: 0.1vw;
+    display: inline-flex;
+    margin-top: -7.8vh;
+    font-size: 1em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.register {
+  margin-right: -1.5vw;
+  }
+
+.howitworks {
+    margin-top: -7.7vh;
+    margin-left: 1vw;
+  }
+
+.buy-tickets {
+margin-top: -7.7vh;
+  }
+
+
+.films-tickets-link {
+    margin-top: -5vh;
+    margin-right: -14px;
+  }
+
+.buy-tickets-link {
+    margin-top: -6vh;
+    margin-right: -8px;
+    margin-left: 1vw;
+  }  
+
+.buytickets-loggedout {
+    margin-top: -6.8vh;
+    margin-right: -8px;
+    margin-left: 1vw;
+  }
+
+.howitworks-loggedin {
+  margin-top: -5vh;
+}
+
+.logout {
+  margin-top: -5vh;
+}*/
+
+/*.hamburgerDiv { 
+    display: none;
+    margin-top: -7vh;
+    margin-right: -1em;
+    }
+
+.hamburger { 
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+    display: flex;
+    }
+  
+  .reg-dropdown {
+  margin-left: 1vw;
+  margin-right: 0.5em;
+  }
+
+  .log-dropdown {
+  margin-left: -1.4em;
+  }
+
+  .buytickets-dropdown {
+  margin-left: -0.9em;
+  }
+
+  .logout {
+  margin-top: -4.8vh;
+  }
+
+
+  .how-dropdown {
+  left: 6.5em;
+  }
+
+  .buy-dropdown {
+  left: 13em;
+  }
+
+  .how-auth-dropdown {
+  display: inline-flex;
+  position: absolute;
+  left: 105px;
+  top: 72px;
+  text-align: left;
+  z-index: 2;  
+  }
+
+  .logout-dropdown {
+  display: inline-flex;
+  position: absolute;
+  left: 320px;
+  top: 40px;
+  text-align: left;
+  z-index: 2; 
+  }*/
+
+ /* .logged-in-nav {
+    font-family: 'Raleway', sans-serif;
+    margin-top: 1vh;
+    font-size: 1.2em;
+  }
+
+  .films-dropdown {
+    left: 20px;
+    top: 40px; 
+  } 
+
+  .logout-dropdown {
+    margin-top: 0px;
+  }
+
+.how-auth-dropdown {
+    margin-top: -1.6em;
+    margin-left: 4em;
+  }
+
+.how-loggedin {
+    margin-top: -2em;
+  }
+
+.hamburgDiv-loggedin {
+  display: none;
+  margin-top: -6vh;
+}*/

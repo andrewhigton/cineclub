@@ -44,3 +44,69 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+//from here
+// {
+//   "name": "satcinemaclub",
+//   "version": "1.0.0",
+//   "private": "true",
+//   "proxy": "http://localhost:5000",
+//   "description": "",
+//   "main": "server.js",
+
+
+  "start": "node server",
+    "server": "nodemon server --ignore client",
+    "client": "npm start --prefix client",
+    "build": "react-scripts build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+
+
+// "scripts": {
+  //   "start": "react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject"
+  // },
+
+//   "scripts": {
+//     "start": "node server",
+//     "server": "nodemon server --ignore client",
+//     "client": "npm start --prefix client",
+//     "build": "react-scripts build",
+//     "dev": "concurrently \"npm run server\" \"npm run client\""
+//   },
+//   "author": "andrew higton",
+//   "license": "ISC",
+//   "dependencies": {
+//     "axios": "^0.19.2",
+//     "bcryptjs": "^2.4.3",
+//     "config": "^3.3.3",
+//     "express": "^4.17.1",
+//     "express-validator": "^6.9.2",
+//     "jsonwebtoken": "^8.5.1",
+//     "moment": "^2.29.1",
+//     "mongodb": "^3.6.4",
+//     "mongoose": "^5.11.17",
+//     "morgan": "^1.10.0",
+//     "query-string": "^6.14.0",
+//     "react-addons-css-transition-group": "^15.6.2",
+//     "react-bootstrap-carousel": "^4.1.1",
+//     "react-stripe-checkout": "^2.6.3",
+//     "react-transition-group": "^1.2.1",
+//     "redux": "^4.0.5",
+//     "uuid": "^3.4.0"
+//   },
+//   "devDependencies": {
+//     "body-parser": "^1.19.0",
+//     "compression": "1.7.4",
+//     "concurrently": "^5.3.0",
+//     "cors": "^2.8.5",
+//     "dotenv": "7.0.0",
+//     "express": "^4.16.4",
+//     "nodemon": "^2.0.7",
+//     "stripe": "6.28.0"
+//   }
+// }

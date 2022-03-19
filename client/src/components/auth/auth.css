@@ -1,0 +1,78 @@
+.auth {
+  font-size: 24px;
+  margin-top: 65px;
+  float: right;
+  font-family: 'Raleway', sans-serif;
+}
+
+.lead {
+  margin-top: 20px;
+  font-size: 25px !important;
+  margin-left: 25px;
+  color: #864747;
+}
+
+.form .form-group {
+  margin-top: 30px;
+  margin: 1.2rem 0;
+  padding-left: 20px;
+}
+
+.form .form-text {
+  display: block;
+  margin-top: 0.5rem;
+  color: #888;
+}
+
+.form input[type='text'],
+.form input[type='number'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='date'],
+.form input[type='time'],
+.form select,
+.form textarea {
+  display: block;
+  width: 95%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  
+}
+
+.form-ticket {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.form input[type='submit'],
+button {
+  font: inherit;
+}
+
+.form .social-input {
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  /*background: var(--light-color);*/
+  background-color: #864747 !important;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none !important;
+  cursor: pointer;
+  margin-left: 1.4rem;
+  margin-top: 1.7rem;
+  width: auto;
+  /*margin-left: 20px;*/
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+
+.films-link {
+  margin-left: 30px;
+}

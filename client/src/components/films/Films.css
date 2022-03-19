@@ -1,0 +1,147 @@
+.all-screenings {
+  display: block;
+  margin-top: 2vh;
+  max-width: 93%;
+  justify-content: center; 
+  margin: auto;
+  /*border: 5px solid black;*/
+}
+
+.films-list {
+  position: relative;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin-top: 5vh;
+  padding-bottom: 4vh;
+  margin-bottom: 14vh;
+  border: 10px #864747 solid; 
+}
+
+.all-screenings-title {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-family: 'Raleway', sans-serif;
+  color: #864747;
+  left: 100px;
+  margin-left: 6vw;
+  margin-top: 5vh; 
+}
+
+.film {
+    font-family: 'Limelight', cursive;
+    text-align: center;
+    width: 280px;
+    /*height: 69vh;*/
+    min-width: 280px;
+    /*margin-right: 2vw;*/
+    color: white;
+    margin-top: -3.5vh;
+    margin-bottom: 7vh;
+    padding: 2vw;
+    margin-left: 13px;
+}
+
+.view-all-link {
+    /*top: -10vh;*/
+    margin-top:-23vh;
+    margin-bottom: 9vh;
+    margin-right: 7vw;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-family: 'Raleway', sans-serif;
+    color: #864747;
+    float: right;
+    position: relative;
+    z-index: 4 !important;
+
+}
+
+.small-film-pic {
+  width: 240px;
+  height: 150px;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+  position: relative;
+}
+
+
+.your-film-header {
+  margin-bottom: -20px;
+  margin-top: 30px;
+  margin-left: 5px; 
+}
+
+
+.custom-button {
+  max-width: 80%;
+  height: 6vh;
+  color: white;
+  letter-spacing: 0.5px;
+  padding: 0 35px 0 35px;
+  font-size: 15px; 
+  background-color: #864747;
+  margin-bottom: 3vh;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+  justify-content: center;
+
+  &:hover {
+    background-color: #511000;
+    color: white;
+    border: 1px solid black;
+  }
+}
+
+.inset-text {
+  font-family: 'Raleway', sans-serif;
+  position: absolute;
+  font-size: 2em;
+  color: #864747;
+  left: 30px;
+  top: 575px;
+}
+
+.film-border {
+  top: 200px;
+  left: 50%;
+  transform: translate(-0%);
+  background: #111111;
+  overflow: hidden;
+}
+
+.film-border::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  box-shadow: 14px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
+}
+
+.film-border::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  box-shadow: 4px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
+}
+
+.film-border div {
+  width: 90px;
+  height: 60%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  margin-left: 4px;
+  box-shadow: inset 0px 0px 10px 0px #b7410e;
+  display: inline-block;
+  margin-top: 50px;
+}

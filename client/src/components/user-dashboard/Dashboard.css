@@ -1,0 +1,52 @@
+.dashboard-display {  
+  /*display: flex;
+  flex-wrap: wrap; */
+  margin-top: -2vh;
+  padding-bottom: 40px;
+}
+
+.your-tickets {
+  margin-top: 20px;
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 2vw;
+}
+
+.your-films {
+  margin-top: 50px;
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 2vw;	
+}
+
+.ticket-film-head {
+  display: block;
+  font-size: 1.7em;
+  margin-left: 30px;
+  margin-bottom: 2vh; 
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/*.film-block {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+
+.ticket-block {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+*/
+.tickets-films-block {
+/*margin-bottom: 10px;*/
+	/*display: block;*/
+}
