@@ -1,4 +1,1 @@
-{
-	"mongoURI":"mongodb+srv://andrew:Revolver123@cluster0-tqrdd.mongodb.net/test?retryWrites=true&w=majority",
-	"jwtSecret":"Revolver12"
-}
+
