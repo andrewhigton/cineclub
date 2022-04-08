@@ -9,9 +9,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './Navbar.css';
 import '../../App.css';
 
-interface ChildComponentProps extends RouteComponentProps<any> {
-	params: any
-}
+// interface ChildComponentProps extends RouteComponentProps<any> {
+// 	params: any
+// }
 
 interface NavbarProps {
 	auth: {
@@ -21,18 +21,20 @@ interface NavbarProps {
 	logout: () => void;
 }
 
-type JointNavbarProps = ChildComponentProps & NavbarProps;
+// type JointNavbarProps = ChildComponentProps & NavbarProps;
 
-const NavbarComponent: React.FC<JointNavbarProps> = ({ 
+const NavbarComponent: React.FC<NavbarProps> = ({ 
 	auth: { isAuthenticated, loading }, 
 	logout, 
-	params 
+	// params 
 	}) => {	
-	//so use the same one for both, with a hampburger drop down on the right like picturehouse 
+
+	// const params = useParams();
+	
 	return (
 		<Fragment>{ isAuthenticated ? 
 		 <Navbar bg="light" expand="lg">
-		   <Navbar.Brand href="#home">SATURDAY CINEMA CLUB</Navbar.Brand>
+		   <Navbar.Brand href="/">SATURDAY CINEMA CLUB</Navbar.Brand>
 		    <Navbar.Toggle  aria-controls="basic-navbar-nav" />
 		    <Navbar.Collapse className="dropdown" id="basic-navbar-nav">
 			   <Nav className="me-auto">
@@ -47,7 +49,7 @@ const NavbarComponent: React.FC<JointNavbarProps> = ({
 			: 
 		   <Navbar className="navbar" fixed="top" bg="light" expand="md">
 			  
-			    <Navbar.Brand href="#home">SATURDAY CINEMA CLUB</Navbar.Brand>
+			    <Navbar.Brand href="/">SATURDAY CINEMA CLUB</Navbar.Brand>
 			    
 			    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			    <Navbar.Collapse className="dropdown" id="basic-navbar-nav">

@@ -32,9 +32,6 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 			return;
 		}
 		login(email, password)
-		//this fires login/actions
-		//gets body in actions, sends data to the link
-		//dispatches login success in reducers 
 		}
 
 		if(isAuthenticated) {

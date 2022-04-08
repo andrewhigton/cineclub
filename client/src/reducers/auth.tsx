@@ -22,11 +22,9 @@ const initialState = {
 
 const auth = (
   state: RepositoriesState = initialState, 
-  // state: initialState, 
   action: ActionUser
   ): RepositoriesState => {
-
-  // const { type } = action;
+  
   let payload;  
   if(action.payload) {
     payload = action.payload; 
@@ -65,7 +63,8 @@ const auth = (
         ...state,
         token: null,
         isAuthenticated: false,
-        loading: false
+        loading: false,
+        user: null
       };
       default:
       return state;

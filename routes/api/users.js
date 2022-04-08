@@ -28,7 +28,7 @@ const User = require('../../models/User');
     //   res.send('User route');
     // }
   const { name, email, password } = req.body;
-
+  if(req) {
     try {
        let user = await User.findOne({ email });
 
@@ -56,7 +56,6 @@ const User = require('../../models/User');
         }
       }
 
-      //so what does JWT do? 
       jwt.sign(
       	payload, 
       	config.get('jwtSecret'),
@@ -68,6 +67,7 @@ const User = require('../../models/User');
 		} catch (err) {
       console.error(err.message);
       res.status(500).send('Server error');
+      }
     }
   }
 );

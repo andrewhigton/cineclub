@@ -11,7 +11,9 @@ const connectDB = async () => {
 			useCreateIndex: true
 			});
 		console.log('mongodb connected');
+
 	} catch(err) {
+		console.log('mongodb not connected');
 		console.error(err.message);
 		process.exit(1);
 	}

@@ -1,36 +1,65 @@
 import React from 'react';
-import { Route, Redirect, RouteComponentProps } from 'react-router-dom'
+import { Route, Redirect, RouteComponentProps, RouteProps } from 'react-router-dom'
 import { connect } from 'react-redux';
 
-interface RouteProps {
+// type RouteProps = {
+	interface PrivateRouteProps extends RouteProps {
 	auth: {
 		isAuthenticated: boolean,
 		loading: boolean,
 	}
+	path?: string,
 	component: React.ComponentType<any>;
-	Component: React.ComponentType<any>;
-}
+	// Component: React.ComponentType<any>;
+};
 
-const PrivateRoute: React.FC<RouteProps> = ({ 
-	component: Component, 
-	auth: { isAuthenticated, loading }, 
-	...rest 
-	}) => (
+	const PrivateRoute = ( props: PrivateRouteProps ) => {
+	const { component: Component, auth: { isAuthenticated, loading }, path, ...rest } = props; 
 
+	return (
 	<Route 
 	{...rest} 
-		render={props => 
+		render={routeProps => 
 		!isAuthenticated && !loading ? (  
 		<Redirect to='/login' />
 		) : (
-		<Component {...props} />
+		<Component {...routeProps} />
 		)	
 	}
 	/>
-);
+	);
+}
 
 const mapStateToProps = state => ({
 	auth: state.auth
 });
 
 export default connect(mapStateToProps)(PrivateRoute);
+
+
+
+// const PrivateRoute: React.FC<RouteComponentProps<RouteProps>> = ({ 
+
+// 	component: Component, 
+// 	auth: { isAuthenticated, loading },
+// 	path, 
+// 	...rest 
+// 	}) => (
+
+// 	<Route 
+// 	{...rest} 
+// 		render={props => 
+// 		!isAuthenticated && !loading ? (  
+// 		<Redirect to='/login' />
+// 		) : (
+// 		<Component {...props} />
+// 		)	
+// 	}
+// 	/>
+// );
+
+// const mapStateToProps = state => ({
+// 	auth: state.auth
+// });
+
+// export default connect(mapStateToProps)(PrivateRoute);

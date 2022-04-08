@@ -26,21 +26,48 @@ export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
     setAuthToken(localStorage.token);
   }
   
-  try {
-    const res = await axios.get('/api/auth');
-    
-    dispatch({
+    return axios.get('/api/auth')
+    .then(res => {
+      dispatch({
       type: ActionType.USER_LOADED,
       payload: res.data
-    });
-  } catch (err) {
-    console.log(err)
-    dispatch({
-      type: ActionType.AUTH_ERROR,
-      payload: null
-    });
-  }
-};
+    })
+  })
+  .catch(err => {
+      const errors = err.response.data.errors;
+        if (errors) {
+          alert('Please check your email and password')
+          dispatch({
+            type: ActionType.AUTH_ERROR,
+            payload: null
+        });
+      }
+  });
+}
+
+
+
+//   try {
+//     console.log('line 30 called')    
+//     const res = await axios.get('/api/auth');
+//     //why is this not returning? 
+//     // console.log('line 32 called')
+//     console.log('line 33 called ' + res)
+
+//     dispatch({
+//       type: ActionType.USER_LOADED,
+//       payload: res.data
+//     });
+//   } catch (err) {
+//     console.log(err)
+//     dispatch({
+//       type: ActionType.AUTH_ERROR,
+//       payload: null
+//     });
+//     }
+//   // }
+// };
+
 
 // Register User
 export const register = ( name: string, email: string, password: string ) => 
@@ -55,49 +82,61 @@ async (dispatch: Dispatch<ActionUser>) => {
 
   const body = JSON.stringify({ name, email, password });
 
-  try {
-    const res = await axios.post('/api/users', body, config);
-    
-    dispatch({
+  return axios.post('/api/users', body, config)
+  .then(res => {
+        console.log(res)  
+      dispatch({
       type: ActionType.REGISTER_SUCCESS,
       payload: res.data
-    });
-    // dispatch(loadUser());
-    loadUser();
-    
-
-    } catch (err) {
-    // console.log(err)
-    // const errors = err.response.data.errors;
-    // if (err instanceof Error) {
-    // const errors = err.response.data.errors;
-    //   }
-
-    // if (errors) {
-    //   console.log(err)
-    //   alert(err)
-    // }
-
-
-    if (err) {
-      alert(err)
+    })
+  })
+  .then(dispatch<any>(loadUser()))
+  .catch(err => {
+    const errors = err.response.data.errors;
+    if (errors) {
+      //change this to a warning, with json? 
+      alert('Something went wrong. Please check your email and password')
       dispatch({
       type: ActionType.REGISTER_FAIL,
-      // type: ActionType.LOGOUT,
       payload: null
     });
-    //   dispatch({
-    //   type: ActionType.LOGIN_FAIL,
-    //   payload: null
-    // });
     }
-
-    
-  }
+  });
 };
 
+
+
+//   try {
+//     const res = await axios.post('/api/users', body, config);
+//     //console.log(res)  
+//     dispatch({
+//       type: ActionType.REGISTER_SUCCESS,
+//       payload: res.data
+//     });
+//     dispatch<any>(loadUser());
+    
+
+//     } catch (err) {
+    
+
+//     if (err) {
+//       alert(err)
+//       dispatch({
+//       type: ActionType.REGISTER_FAIL,
+//       // type: ActionType.LOGOUT,
+//       payload: null
+//     });
+    
+//     }
+
+    
+//   }
+// };
+
+
+
 //Login User
-export const login = (email: string | number, password: string | number) => async dispatch => {
+export const login = (email: string | number, password: string | number) => async (dispatch: Dispatch<ActionUser>) => {
   const config = {
     headers: {
       'Content-Type': 'application/json'
@@ -105,36 +144,61 @@ export const login = (email: string | number, password: string | number) => asyn
   };
 
   const body = JSON.stringify({ email, password });
-  
-try {
-    const res = await axios.post('/api/auth', body, config);
-    dispatch({
+
+  return axios.post('/api/auth', body, config)
+  .then(res => {
+      dispatch({
       type: ActionType.LOGIN_SUCCESS,
       payload: res.data
     })
-    dispatch(loadUser())
-  } 
-  catch (err) {
-    if (err) {
-      alert(err)
-      dispatch({
-      type: ActionType.LOGIN_FAIL
-    });
-    }
-    //need to fix this
-    // const errors = err.response.data.errors;
-    // if (errors) {
-    //   alert(errors)
-    //   dispatch({
-    //   type: ActionType.LOGIN_FAIL
-    // });
-    // }
-  }
-
+  })
+  .then(dispatch<any>(loadUser()))
+  .catch(err => {
+      const errors = err.response.data.errors;
+        if (errors) {
+          alert('Please check your email and password')
+          dispatch({
+          type: ActionType.LOGIN_FAIL,
+          payload: errors
+        });
+      }
+  });
 };
 
+
+
+//Login User
+// export const login = (email: string | number, password: string | number) => async (dispatch: Dispatch<ActionUser>) => {
+//   const config = {
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   };
+
+//   const body = JSON.stringify({ email, password });
+// try {
+//     const res = await axios.post('/api/auth', body, config);
+   
+//     dispatch({
+//       type: ActionType.LOGIN_SUCCESS,
+//       payload: res.data
+//     })
+//     dispatch<any>(loadUser());          
+
+//   } catch (err: any) {
+//     console.log(err)
+//     const errors = err.response.data.errors;
+//     if (errors) {
+//       alert(errors)
+//       dispatch({
+//       type: ActionType.LOGIN_FAIL,
+//       payload: null
+//     });
+//     }
+//   }
+// };
+
 // Add Tickets
-//here
 export const updateUserTickets = (formData) => 
 async (dispatch: Dispatch<ActionUser>) => {
   try {
