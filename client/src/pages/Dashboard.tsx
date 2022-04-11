@@ -30,13 +30,13 @@ const Dashboard: React.FC<JointDashboardProps> = ({
   loadFilms,
   history
   }) => {
-
+  console.log('dashboard user is ' + user)
   useEffect(() =>  {
       loadFilms();  
   }, [loadFilms]); 
-
-return ( 
-        <Fragment>
+return (
+!user ? <h2>please wait</h2> 
+  : <Fragment>    
           <div>
           <h2 className='welcome-message'>Welcome {user && user.name}</h2>
           </div>
@@ -58,8 +58,10 @@ return (
           </div>
           </div>
           <Footer />
+
         </Fragment>
-      )
+        
+      ) 
 }
 
 const mapStateToProps = state => ({

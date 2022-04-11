@@ -1,7 +1,7 @@
 import React, { Fragment, FunctionComponent, useEffect  } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, RouteProps } from 'react-router-dom';
-import { RouteComponentProps } from "@reach/router";
+import { RouteComponentProps } from "react-router";
 import Register from './components/auth/Register';
 import Login from './components/auth/Login'; 
 import NavbarComponent from './components/navbar/Navbar';

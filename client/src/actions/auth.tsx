@@ -21,13 +21,15 @@ interface ChildComponentProps extends RouteComponentProps<any> {
 
 // Load User
 export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
-  
+  console.log('user loading')
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
   
     return axios.get('/api/auth')
     .then(res => {
+console.log('user loaded')
+      console.log(res.data)
       dispatch({
       type: ActionType.USER_LOADED,
       payload: res.data
