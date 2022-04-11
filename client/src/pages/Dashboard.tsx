@@ -35,7 +35,7 @@ const Dashboard: React.FC<JointDashboardProps> = ({
       loadFilms();  
   }, [loadFilms]); 
 return (
-!user ? <h2>please wait</h2> 
+!user && loading ? <h2>please wait</h2> 
   : <Fragment>    
           <div>
           <h2 className='welcome-message'>Welcome {user && user.name}</h2>

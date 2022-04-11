@@ -27,6 +27,7 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('called app')
   //   // check for token in LS when app first runs
     // if (localStorage.token) {
       // if there is a token set axios headers for all requests

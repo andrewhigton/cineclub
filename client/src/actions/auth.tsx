@@ -26,26 +26,46 @@ export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
     setAuthToken(localStorage.token);
   }
   
-    return axios.get('/api/auth')
-    .then(res => {
-console.log('user loaded')
-      console.log(res.data)
-      dispatch({
+  try {
+    const res = await axios.get('/api/auth');
+
+    dispatch({
       type: ActionType.USER_LOADED,
       payload: res.data
     })
-  })
-  .catch(err => {
-      const errors = err.response.data.errors;
-        if (errors) {
+} catch (err) {
+      // const errors = err.response.data.errors;
+        if (err) {
           alert('Please check your email and password')
           dispatch({
             type: ActionType.AUTH_ERROR,
             payload: null
         });
       }
-  });
+  };
 }
+
+
+//     return axios.get('/api/auth')
+//     .then(res => {
+// console.log('user loaded')
+//       console.log(res.data)
+//       dispatch({
+//       type: ActionType.USER_LOADED,
+//       payload: res.data
+//     })
+//   })
+//   .catch(err => {
+//       const errors = err.response.data.errors;
+//         if (errors) {
+//           alert('Please check your email and password')
+//           dispatch({
+//             type: ActionType.AUTH_ERROR,
+//             payload: null
+//         });
+//       }
+//   });
+// }
 
 
 
