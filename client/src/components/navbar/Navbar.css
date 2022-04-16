@@ -14,8 +14,12 @@ a  {
      margin-bottom: 5vh;
   }
 
+.show {
+right: 350px;
+}
+
 .nav-right {
-    margin-left: 7vw;
+    margin-left: 4vw;
 }
 
 /*.logged-out-nav {

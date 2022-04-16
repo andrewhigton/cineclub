@@ -33,6 +33,7 @@ a {
 .welcome-message {
   font-size: 1.7em;
   margin-left: 30px;
+  margin-top: 13vh;
   margin-bottom: 30px; 
   /*font-family: 'Raleway', sans-serif;*/
 }
@@ -44,7 +45,7 @@ body .all-screenings {
 
 
 .dashboard-display {
-  margin-top: 20px;
+  margin-top: 5vh;
 }
 
 /*.logged-out-nav {
@@ -57,7 +58,10 @@ body .all-screenings {
   }
 
   .dropdown {
-    right: 5vw;
+    right: 0vw;
+    width: 100%;
+    display: inline-flex;
+
   }
 
   /*.logged-out-nav {
@@ -78,7 +82,7 @@ body .all-screenings {
 
   .dropdown {
     position: fixed !important;
-    right: 1vw;
+    right: -5vw;
     text-align: right;
     background-color: white;
     top: 9vh;
@@ -87,7 +91,7 @@ body .all-screenings {
     border-color: red;
     padding: 1vw;
     margin-top: 2vh;
-    width: 230px;
+    width: 300px;
     margin-right: 2.5vw;
   }
 
@@ -201,12 +205,16 @@ body h1 {
   }
 
   .welcome-message {
-  margin-top: 15px;
+  margin-top: 25px;
 }
   
   .carousel {
     margin-top: 1.7vh;
     max-height: 190px !important;
+  }
+
+  .welcome-message {
+    margin-top: 10vh;
   }
 }
 
