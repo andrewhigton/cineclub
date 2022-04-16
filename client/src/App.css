@@ -12,8 +12,10 @@
   max-width: 102vw;  
 }
 
+
+
 body {
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
   line-height: 1.6;
   background-color: #fff;
   color:white;
@@ -32,7 +34,7 @@ a {
   font-size: 1.7em;
   margin-left: 30px;
   margin-bottom: 30px; 
-  font-family: 'Raleway', sans-serif;
+  /*font-family: 'Raleway', sans-serif;*/
 }
 
 body .all-screenings {
@@ -41,32 +43,31 @@ body .all-screenings {
   }
 
 
+.dashboard-display {
+  margin-top: 20px;
+}
+
+/*.logged-out-nav {
+    margin-left: 33vw;   
+}*/
+
 @media screen and (max-width: 1200px) {  
   body .inset-text {
   top: 530px;
   }
 
   .dropdown {
-    position: fixed !important;
     right: 5vw;
   }
 
+  /*.logged-out-nav {
+    margin-left: -7vw;   
+  }
+*/
   ._3 {
     display: none;
   }
-  
-/*  .hamburgerDiv {
-  display: none;
-  margin-top: -7vh;
-  }
 
-  .hamburgDiv-loggedin {
-  display: none;
-  }
-
-  .dropdown {
-    display: block;
-  }*/
 }
 
 @media screen and (max-width: 1100px) {  
@@ -75,31 +76,28 @@ body .all-screenings {
   display: none
   }
 
-  /*.dropdown {
-    position: absolute;
-    right: 0;
-
-    float: right;
-    font-size: 0.8em;
-    position: absolute !important;
+  .dropdown {
+    position: fixed !important;
+    right: 1vw;
+    text-align: right;
     background-color: white;
-    width: 100%;
-    left: 1vw;
-    top: 6vh;
-    margin-left: -1vw;
-    margin-top: 0vh;
-    z-index: 1;
-  }*/
-  
- /* .hamburgerDiv {
-  display: block;
-  margin-top: -4.5vh;
+    top: 9vh;
+    z-index: 2;
+    border: 1px solid inset red;
+    border-color: red;
+    padding: 1vw;
+    margin-top: 2vh;
+    width: 230px;
+    margin-right: 2.5vw;
   }
 
-  .hamburgDiv-loggedin {
-  display: block;
-  }
-*/
+.logged-out-nav {
+  top: 9vh;  
+  margin-top: -2vh;
+  width: 230px;
+}
+
+
 }
 
 @media screen and (max-width: 1058px) {  
@@ -111,12 +109,6 @@ body .all-screenings {
   .full-screen {
       background-color: black;
   }
-
-/*  .dropdown {
-    position: fixed !important;
-    right: 5vw;
-  }
-*/
 }
 
 @media screen and (max-width: 999px) {  
@@ -128,6 +120,10 @@ body .all-screenings {
 
   .full-screen {
      display: none;
+  }
+
+   .logged-out-nav {
+    margin-left: 0vw;   
   }
 
   .carousel {
@@ -148,10 +144,9 @@ body .all-screenings {
   left: 340px;
   }
 
-/*  .reg-dropdown {
-    margin-left: 0.5vw;
+  .logged-out-nav {
+    margin-left: 0vw;   
   }
-*/
 }
 
 @media screen and (max-width: 770px) {  
@@ -161,43 +156,9 @@ body .all-screenings {
   top: 440px;
   }
 
-  .dropdown {
-    position: fixed !important;
-    right: 3vw;
-    text-align: right;
-    background-color: white;
-    top: 7vh;
-    z-index: 2;
-    border: 1px solid inset red;
-    border-color: red;
-    padding: 3vw;
-}
-
-
-/*  .register, .login, .howitworks {
-    display: none;
-  }
-*/
-/*  .hamburgDiv-loggedin { 
-    margin-top: -4.5vh;
-  }
-
-  .reg-dropdown {
-    margin-left: 1vw;
-  }
-
-  .how-loggedin, .films-tickets-link, .logout  {
-    display: none;
-  }*/
-
   body .image-slide {
     top: -150px; 
   }
-
-  /*.navbar-left {
-    margin-top: -45px;
-}*/
-
 }
 
 @media screen and (max-width: 680px) {  
@@ -205,19 +166,11 @@ body .image-slide {
     top: -180px; 
   }
   
-/*body .hamburgerDiv {
-    margin-top: -11vh;
-  }*/
-
 body .inset-text {
   font-size: 15px;
   top: 410px;
   }
 
-/*body .hamburger {
-  display: block;
-  }
-*/
 body h1 {
   font-size: 2.3rem;
   }  
@@ -230,21 +183,11 @@ body h1 {
   top: 410px;
   }
 
-
-  /*body .navbar {
-    height: 3vh;
-    margin-top: 30px;
-  }
-*/
   body h1 {
   font-size: 0.85em;
   margin-top: -1.2vh;
   }
 
-/*  .reg-dropdown {
-  margin-left: 1vw;
-  }
-*/
   .contacts-link {
   display: none;
 }
@@ -257,33 +200,6 @@ body h1 {
     max-height: 230px !important;
   }
 
-/*  .hamburgDiv-loggedin {
-    margin-top: -7.2vh;
-  }
-
-  .hamburger { 
-    width: 22px;
-    height: 3px;
-    margin: 3px;
-    }
-
-  .dropdown {
-    top: 1vh;
-  }*/
-
-  /*.navbar {
-    height: 50px;
-  }
-*/
-  /*.navbar-left {
-    margin-top: -8vh;
-  }
-*/
-/*  .reg-dropdown, .log-dropdown, .how-dropdown, .buy-dropdown, .buytickets-dropdown  {
-    font-size: 0.8em;
-    margin-right: 0.1vw;
-  }
-*/  
   .welcome-message {
   margin-top: 15px;
 }
@@ -308,17 +224,6 @@ body h1 {
   font-size: 9px;
   top: 400px;
 }
-
-  body .all-screenings {
-  
-
-  }
-
- /*.navbar {
-    width: 90%;
-    margin-top: 10px !important;
-    margin-bottom: 22px;
-  }*/
   
   body .navbar-brand {
     font-size: 1.1em;  
@@ -369,12 +274,6 @@ body .inset-text {
 
 }
 
-/*
-.log-dropdown, .buy-dropdown, .how-dropdown, .buytickets-dropdown {
-    margin-right: -5vw;
-}
-
-*/
 body h1 {
   font-size: 0.6em;
   margin-top: -1vh;;
@@ -417,18 +316,6 @@ body .inset-text {
   top: 390px;
 }
 
- /*.navbar {
-    max-height: 30px;
-  }
-
- .navbar-left {
-    width: 90%;
-  }
-
-  .navbar-right {
-    width: 10%;
-  }*/
-
  h1 {
   font-size: 0.45em;
   line-height: 1.1;
@@ -438,19 +325,7 @@ body .inset-text {
   body .image-slide {
     top: -300px; 
   }
-
-/*  body .hamburgerDiv {
-    margin-top: -19vh;
-    margin-right: -2.5em;
-  }*/
 }
-
-@media screen and (max-width: 290px) {  
-/*.navbar-left {
-    width: 100%;  
-  }*/
-}
-
 
 /*ends media screens*/
 
@@ -458,6 +333,7 @@ body .inset-text {
 .landing {
   height: 100%;
   width: 100%;
+  margin-top: 20px;
 }
 
 .films-link {

@@ -27,7 +27,7 @@ if(req.user.id) {
    res.json(user);
    console.log('request2 ' + user)
    //so this is working. it's going wrong somewhere else
-   //auth works, but not feeing through to state. why?
+   //auth works, but not feeding through to state. why?
  } catch (err) {
    //console.log('request3 ' + err)
    console.log(err.message);

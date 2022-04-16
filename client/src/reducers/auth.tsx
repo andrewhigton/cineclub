@@ -34,6 +34,7 @@ const auth = (
     case ActionType.USER_LOADED:
     return {
       ...initialState,
+      token: localStorage.getItem('token'),
       isAuthenticated: true,
       loading: false,
       user: payload
@@ -43,6 +44,7 @@ const auth = (
       localStorage.setItem('token', payload.token);
       return {
       ...state,
+      token: localStorage.getItem('token'),
       ...payload,
       isAuthenticated: true,
       loading: false
