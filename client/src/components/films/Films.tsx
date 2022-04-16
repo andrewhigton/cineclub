@@ -25,7 +25,6 @@ interface FilmsProps {
 const Films: React.FC<FilmsProps> = ({ 
 	film: {films, loading} 
 	}) => {
-	// console.log('films is ' + films)
 	if (films === null) return null;
 	return (
 		
@@ -35,7 +34,7 @@ const Films: React.FC<FilmsProps> = ({
 	    	</div>	
 	    	<div className="films-list">
 	    	
-	    	{films.slice(0,4).map((item, index) => {
+	    	{films.slice(0,6).map((item, index) => {
 				return <Film
 				index={index}
 				film={item}

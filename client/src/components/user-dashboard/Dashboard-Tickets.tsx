@@ -51,7 +51,3 @@ const DashboardTickets: React.FC<DashTicketsProps> = ({ user, loading }) => {
   }  
 
 export default DashboardTickets;
-
-  // <div className='welcome-message'>
-  //         <h2 className='tickets-films-head'>Your tickets</h2>
-  //       </div>

@@ -9,11 +9,13 @@ const { check, validationResult } = require('express-validator');
 		// @desc GET all films
 		// @access Public	
 		router.get('/', async (req, res) => {
+		
 			try {
 				const films = await Film.find().populate('film', 
 				['title', 'cinema']);
 				res.json(films)
 			} catch (err) {
+
 				console.error(err.message);
 				res.status(500).send('Server Error');
 			}

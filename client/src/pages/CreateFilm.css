@@ -6,5 +6,6 @@
 
 .create-film-title {
 	margin-left: 16px;
-    margin-top: 20px;
+  margin-top: 10vh;
+  font-size: 30px;
 }

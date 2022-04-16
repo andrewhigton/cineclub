@@ -11,12 +11,28 @@ const { check, validationResult } = require('express-validator');
 // @desc Test route
 // @access Public
 router.get('/', auth, async (req, res) => {
+
+//console.log(JSON.Stringify(req.header))
+//this not called because auth doesn't pass 
+//console.log('0 ' + req.header)
+// console.log('1 ' + req)
+// console.log('2 ' + req.user)
+//console.log('3 ' + req.user.id)
+  //works in postman, not here
+if(req.user.id) {
  try {
+   //console.log('request1 ' + req.user.id)
+   // console.log('line 18 called server')
    const user = await User.findById(req.user.id).select('-password');
    res.json(user);
+   console.log('request2 ' + user)
+   //so this is working. it's going wrong somewhere else
+   //auth works, but not feeding through to state. why?
  } catch (err) {
+   //console.log('request3 ' + err)
    console.log(err.message);
    res.status(500).send('Server Error')
+     } 
    }
  });
 
@@ -27,6 +43,7 @@ router.get('/', auth, async (req, res) => {
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists()
   ],
+        
     async (req, res) => {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -36,6 +53,7 @@ router.get('/', auth, async (req, res) => {
   const { email, password } = req.body;
 
     try {
+
        let user = await User.findOne({ email });
         if (!user) {
         return res
@@ -56,8 +74,6 @@ router.get('/', auth, async (req, res) => {
           id: user.id
         }
       }
-      //so we use this to access protected routes 
-      //with the password in default.json 
       jwt.sign(
         payload, 
         config.get('jwtSecret'),

@@ -20,18 +20,16 @@ const User = require('../../models/User');
       'Please enter a password with 3 or more characters'
     ).isLength({ min: 3 })
   ],
+  
   async (req, res) => {
 	    const errors = validationResult(req);
 	    if (!errors.isEmpty()) {
       	return res.status(400).json({ errors: errors.array() });
     	}
-    //   res.send('User route');
-    // }
   const { name, email, password } = req.body;
-
+  if(req) {
     try {
        let user = await User.findOne({ email });
-
         if (user) {
         return res
           .status(400)
@@ -56,7 +54,6 @@ const User = require('../../models/User');
         }
       }
 
-      //so what does JWT do? 
       jwt.sign(
       	payload, 
       	config.get('jwtSecret'),
@@ -68,6 +65,7 @@ const User = require('../../models/User');
 		} catch (err) {
       console.error(err.message);
       res.status(500).send('Server error');
+      }
     }
   }
 );

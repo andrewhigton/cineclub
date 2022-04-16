@@ -1,7 +1,5 @@
 .dashboard-display {  
-  /*display: flex;
-  flex-wrap: wrap; */
-  margin-top: -2vh;
+  margin-top: 2vh;
   padding-bottom: 40px;
 }
 
@@ -27,26 +25,4 @@
   margin-left: 30px;
   margin-bottom: 2vh; 
   font-family: 'Raleway', sans-serif;
-}
-
-
-/*.film-block {
-  display: block;
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 50px;
-}
-
-
-.ticket-block {
-  display: block;
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 50px;
-}
-
-*/
-.tickets-films-block {
-/*margin-bottom: 10px;*/
-	/*display: block;*/
 }

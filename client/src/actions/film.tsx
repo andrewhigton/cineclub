@@ -7,7 +7,6 @@ import { Dispatch } from 'redux';
 export const loadFilms = () => async (dispatch: Dispatch<ActionFilms>) => {
   try {
     const res = await axios.get('/api/film');
-
     dispatch({
       type: ActionType.GET_FILMS,
       payload: res.data
