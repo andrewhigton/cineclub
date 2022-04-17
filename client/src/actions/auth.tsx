@@ -21,7 +21,7 @@ interface ChildComponentProps extends RouteComponentProps<any> {
 
 // Load User
 export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
-  
+  //so this isn't working, authed, but no loading of user 
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
