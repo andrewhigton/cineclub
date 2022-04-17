@@ -30,13 +30,29 @@ const Dashboard: React.FC<JointDashboardProps> = ({
   loadFilms,
   history
   }) => {
+<<<<<<< HEAD
+  //so user never comes through
+  //console.log('dashboard user is ' + user)
+||||||| merged common ancestors
 
+=======
+ 
+>>>>>>> develop
   useEffect(() =>  {
       loadFilms();  
   }, [loadFilms]); 
+<<<<<<< HEAD
+return ( loading ? <h2>please wait</h2> 
+  : <Fragment>    
+||||||| merged common ancestors
 
 return ( 
         <Fragment>
+=======
+return (
+!user ? <h2>please wait</h2> 
+  : <Fragment>    
+>>>>>>> develop
           <div>
           <h2 className='welcome-message'>Welcome {user && user.name}</h2>
           </div>
@@ -58,8 +74,10 @@ return (
           </div>
           </div>
           <Footer />
+
         </Fragment>
-      )
+        
+      ) 
 }
 
 const mapStateToProps = state => ({

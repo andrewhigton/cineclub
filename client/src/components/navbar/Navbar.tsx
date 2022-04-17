@@ -26,18 +26,15 @@ interface NavbarProps {
 const NavbarComponent: React.FC<NavbarProps> = ({ 
 	auth: { isAuthenticated, loading }, 
 	logout, 
-	// params 
 	}) => {	
-
-	// const params = useParams();
 	
 	return (
 		<Fragment>{ isAuthenticated ? 
-		 <Navbar bg="light" expand="lg">
+		 <Navbar className="nav-top-line" expand="lg">
 		   <Navbar.Brand href="/">SATURDAY CINEMA CLUB</Navbar.Brand>
 		    <Navbar.Toggle  aria-controls="basic-navbar-nav" />
 		    <Navbar.Collapse className="dropdown" id="basic-navbar-nav">
-			   <Nav className="me-auto">
+			   <Nav className="me-auto nav-right">
 		        <Nav.Link href="/film/dashboard">Your films and tickets</Nav.Link>
 		        <Nav.Link href="/film">All films</Nav.Link>
 		        <Nav.Link className="howitworks" href="/howitworks">How it works</Nav.Link>
@@ -47,13 +44,13 @@ const NavbarComponent: React.FC<NavbarProps> = ({
 			</Navbar.Collapse>
 		   </Navbar>
 			: 
-		   <Navbar className="navbar" fixed="top" bg="light" expand="md">
+		   <Navbar className="nav-top-line" expand="lg">
 			  
 			    <Navbar.Brand href="/">SATURDAY CINEMA CLUB</Navbar.Brand>
 			    
 			    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			    <Navbar.Collapse className="dropdown" id="basic-navbar-nav">
-			    	<Nav className="">
+			    	<Nav className="me-auto logged-out-nav nav-right">
 			        <Nav.Link href="/register">Register</Nav.Link>
 			        <Nav.Link href="/login">Login</Nav.Link>
 			        <Nav.Link href="/film">All films</Nav.Link>
