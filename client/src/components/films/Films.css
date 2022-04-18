@@ -1,9 +1,9 @@
 .all-screenings {
   display: block;
-  margin-top: 2vh;
   max-width: 93%;
   justify-content: center; 
   margin: auto;
+  margin-top: -12vh;
   /*border: 5px solid black;*/
 }
 
@@ -26,7 +26,6 @@
   color: #864747;
   left: 100px;
   margin-left: 6vw;
-  margin-top: 12vh; 
 }
 
 .film {

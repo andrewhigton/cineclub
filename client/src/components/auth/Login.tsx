@@ -38,7 +38,7 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 			return <Redirect to="/film/dashboard"/>;
 		}
 
-return <Fragment>
+return <div className='auth-pages'>
 		      <p className="lead">Sign in to your account</p>
 		      <form className="form" action="create-profile.html" onSubmit={e => onSubmit(e)}>
 		        <div className="form-group">
@@ -66,7 +66,7 @@ return <Fragment>
 		      <p className="lead">
 		        Don't have an account? <Link className="reg" to="/register">Sign Up</Link>
 		      </p>
-		   </Fragment>
+		   </div>
 }
 
 const mapStateToProps = state => ({

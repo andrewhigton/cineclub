@@ -9,7 +9,13 @@
 * {
   box-sizing: border-box;
   padding: 0;
-  max-width: 102vw;  
+  margin: 0;
+  /*max-width: 1300px;
+  margin: 0 auto;  */
+  
+  /*max-width: 70vw;  */
+  /*margin: auto;*/
+/*  margin-left: 3vw;*/
 }
 
 
@@ -20,7 +26,6 @@ body {
   background-color: #fff;
   color:white;
   background-color: rgba(0, 0, 0, 0.4);
-  max-width: 97%;
   height: 100%;
   -webkit-text-size-adjust: none;
   overflow-x: hidden;
@@ -33,19 +38,19 @@ a {
 .welcome-message {
   font-size: 1.7em;
   margin-left: 30px;
-  margin-top: 13vh;
+  margin-top: 4vh;
   margin-bottom: 30px; 
   /*font-family: 'Raleway', sans-serif;*/
 }
 
 body .all-screenings {
   margin-top: 30px;  
-
+  max-width: 1300px;
   }
 
 
 .dashboard-display {
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 /*.logged-out-nav {
@@ -64,10 +69,6 @@ body .all-screenings {
 
   }
 
-  /*.logged-out-nav {
-    margin-left: -7vw;   
-  }
-*/
   ._3 {
     display: none;
   }
@@ -76,7 +77,7 @@ body .all-screenings {
 
 @media screen and (max-width: 1100px) {  
 
-  .top-row {
+  .nav-right {
   display: none
   }
 
@@ -90,9 +91,9 @@ body .all-screenings {
     border: 1px solid inset red;
     border-color: red;
     padding: 1vw;
-    margin-top: 2vh;
-    width: 300px;
-    margin-right: 2.5vw;
+    margin-top: -2vh;
+    width: 250px;
+    margin-right: 6.5vw;
   }
 
 .logged-out-nav {
@@ -200,15 +201,12 @@ body h1 {
     display: none;
   }
   
-  .carousel {
-    max-height: 230px !important;
-  }
-
   .welcome-message {
   margin-top: 25px;
 }
   
   .carousel {
+    max-height: 230px !important;
     margin-top: 1.7vh;
     max-height: 190px !important;
   }

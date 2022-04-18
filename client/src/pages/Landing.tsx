@@ -29,7 +29,7 @@ const Landing: React.FC<LandingProps> = ({
 	       <div >
 			<Films/>	       	
 	       </div>
-	       <Footer/>
+	      <Footer/> 
 	    </section>
 		)
 	}

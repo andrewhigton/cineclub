@@ -50,7 +50,7 @@ const items = [
 // }
 
 const FilmCarousel: React.FC = (props) => {
-  // console.log(items)
+ 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 

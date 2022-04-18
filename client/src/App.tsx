@@ -5,6 +5,7 @@ import { RouteComponentProps } from "react-router";
 import Register from './components/auth/Register';
 import Login from './components/auth/Login'; 
 import NavbarComponent from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import Landing from './pages/Landing';
 import HowItWorks from './components/howitworks/HowItWorks';
 import Dashboard from './pages/Dashboard';
@@ -40,12 +41,10 @@ const App: React.FC = () => {
             <PrivateRoute path='/film/dashboard' component={Dashboard}/>
             <PrivateRoute path='/create-film' component={CreateFilm} />
 
-            {/*<Route path='/api/film/:id' element={<PrivateRoute component={BookingPage} />} /> 
-            <Route path='/film/dashboard' element={<PrivateRoute component={Dashboard} />} /> 
-            <Route path='/create-film' element={<PrivateRoute component={CreateFilm} />} /> */}
 
           </Switch>
         </section>
+        
       </Fragment>
     </Router> 
  );

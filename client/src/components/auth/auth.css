@@ -1,15 +1,21 @@
+.auth-pages {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .auth {
   font-size: 24px;
   margin-top: 65px;
   float: right;
   font-family: 'Raleway', sans-serif;
+  
 }
 
 .lead {
   margin-top: 20px;
   font-size: 25px !important;
-  margin-left: 25px;
   color: #864747;
+  margin-left: 25px;
 }
 
 .form .form-group {
@@ -44,6 +50,7 @@
 .form-ticket {
   width: 50%;
   margin-top: 10px;
+  margin-left: 0px;
 }
 
 .form input[type='submit'],
@@ -70,6 +77,7 @@ button {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+
 }
 
 

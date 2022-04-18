@@ -17,13 +17,11 @@ interface BookingProps {
 type JointBookingProps = ChildComponentProps & BookingProps; 
 
 const BookingPage: React.FC<JointBookingProps> = ({
-	// updateFilm,
 	getFilmById,
 	filmBooking: {film, loading},
 	match,
 	history,
 	component,
-	// Component
 }) => { 
 	useEffect(() => {
 		getFilmById(match.params.id)

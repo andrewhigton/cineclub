@@ -94,7 +94,7 @@ const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({
           </div>
         
         <form className="form">
-          <div className=" form-ticket">   
+          <div className="form-ticket">   
             <input
               type='number'
               placeholder='Enter number of tickets'

@@ -47,7 +47,7 @@ const Register:React.FC<RegisterProps> = ({ register, isAuthenticated }) => {
   }
 
   return (
-    <Fragment>
+    <div className="auth-pages">
       <p className='lead'>Create Your Account</p>
       <form className='form' onSubmit={e => onSubmit(e)}>
         <div className='form-group'>
@@ -91,7 +91,7 @@ const Register:React.FC<RegisterProps> = ({ register, isAuthenticated }) => {
       <p className='lead'>
         Already have an account? <Link className="reg" to='/login'>Sign In</Link>
       </p>
-    </Fragment>
+    </div>
   );
 };
 

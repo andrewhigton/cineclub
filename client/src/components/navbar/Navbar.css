@@ -8,10 +8,12 @@ a  {
 
 .navbar {
      font-family: 'Limelight', cursive;
-     position: fixed !important; 
      background-color: white !important;
      top: -1vh;
      margin-bottom: 5vh;
+     max-width: 1300px;
+     margin: 0 auto;
+    text-align: center;
   }
 
 .show {
@@ -19,12 +21,12 @@ right: 350px;
 }
 
 .nav-right {
-    margin-left: 4vw;
+    margin-left: 11vw;
 }
 
-/*.logged-out-nav {
-    margin-left: 53vw;   
-}*/
+.nav-right-logged-out {
+    margin-left: 29vw;   
+}
 
 .nav-top-line {
     overflow:auto;
