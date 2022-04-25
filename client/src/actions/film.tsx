@@ -82,7 +82,7 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
 };
 
 // export const updateFilm = (formData, history needed?) => async dispatch => {
-export const updateFilm = (formData) => async (dispatch: Dispatch<ActionFilms>) => 
+export const updateFilm = (formData, history) => async (dispatch: Dispatch<ActionFilms>) => 
 {
   dispatch({ 
     type: ActionType.CLEAR_FILM,
@@ -101,6 +101,7 @@ export const updateFilm = (formData) => async (dispatch: Dispatch<ActionFilms>) 
       payload: res.data
       });
     alert('Thanks for your booking');
+    history.push('/film/dashboard');
   } catch (err) {
     // const errors = err.response.data.errors;
 

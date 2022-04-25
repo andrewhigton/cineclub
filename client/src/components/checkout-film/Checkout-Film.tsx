@@ -97,6 +97,7 @@ const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({
           <div className="form-ticket">   
             <input
               type='number'
+              min='0'
               placeholder='Enter number of tickets'
               name='tickets'
               onChange={e => onChange(e)}

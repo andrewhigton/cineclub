@@ -72,7 +72,8 @@ const StripeCheckoutButton = ({
 			 	window.location.replace('http://localhost:3000/film/dashboard');
 			 })
 			.catch(error => {
-				console.log('Payment error: ', JSON.parse(error)); 	
+				// console.log('Payment error: ', JSON.parse(error)); 	
+				console.log('Payment error: ' + error); 	
 			 	alert('Payment error. Please use the provided credit card details');	
 			 }) 
 	} 
@@ -92,7 +93,7 @@ const StripeCheckoutButton = ({
 		name='Saturday Cinema Club'
 		billingAddress
 		shippingAddress
-		description={`Your total is £${price}`}
+		description={`Your total is £{price}`}
 		amount={priceForStripe}
 		panelLabel='Pay now'
 		token={onToken}
