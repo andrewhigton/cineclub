@@ -38,7 +38,6 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 
-//this duoubles up? this one lsat? 
 if(process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static('client/build'));
@@ -46,20 +45,3 @@ if(process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname), 'client', 'build', 'index.html')
   })
 }
-
-app.post('/api/film/payment', (req, res) => {
-  const body = {
-    source: req.body.token.id,
-    amount: req.body.amount,
-    currency: 'GBP'
-  }
-
-  stripe.charges.create(body, (stripeErr, stripeRes) => {
-    if (stripeErr) {
-      res.status(500).send({ error: stripeErr });
-    } else {
-      return res.redirect('/');
-      res.status(200).send({ success: stripeRes });
-    }
-  });
-})

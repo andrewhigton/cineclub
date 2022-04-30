@@ -21,6 +21,29 @@ const { check, validationResult } = require('express-validator');
 			}
 		});
 
+// app.post('/payment', (req, res) => {
+router.post('/payment', (req, res) => {
+  console.log('token is ' + req.body.token.id)
+
+  const body = {
+    source: req.body.token.id,
+    amount: req.body.amount,
+    currency: 'GBP'
+  }
+
+  console.log('body is ' + body.source)
+  stripe.charges.create(body, (stripeErr, stripeRes) => {
+    if (stripeErr) {
+      console.log('server err is ' + stripeErr)
+      res.status(500).send({ error: stripeErr });
+    } else {
+      return res.redirect('/');
+      console.log('res is ' + res)
+      res.status(200).send({ success: stripeRes });
+    }
+  });
+})
+
 
 router.post('/create-film', [
     auth, 

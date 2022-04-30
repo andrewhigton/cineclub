@@ -6,7 +6,7 @@ import { getFilmById, updateFilm } from '../actions/film';
 import CheckoutFilm from '../components/checkout-film/Checkout-Film'
 
 interface BookingProps {
-	updateFilm: () => void;
+	// updateFilm: () => void;
 	getFilmById: (id) => void;
 	filmBooking: filmInterface;
 	path: string,

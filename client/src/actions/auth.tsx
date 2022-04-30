@@ -9,6 +9,8 @@ interface ChildComponentProps extends RouteComponentProps<any> {
  history: any;
 }
 
+type JointComponentProps = ChildComponentProps & ActionUser; 
+
 // Load User
 export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
   //so this isn't working, authed, but no loading of user 
@@ -205,7 +207,8 @@ export const login = (email: string | number, password: string | number) => asyn
 // };
 
 // Add Tickets
-export const updateUserTickets = (formData) => 
+export const updateUserTickets = (formData, history) =>
+
 async (dispatch: Dispatch<ActionUser>) => {
   try {
     const config = {
@@ -214,7 +217,9 @@ async (dispatch: Dispatch<ActionUser>) => {
       }
     };
 
+     
     const res = await axios.post('/api/users/ticket', formData, config);
+    console.log('res ' + res)
     dispatch({
       type: ActionType.UPDATE_USER,
       payload: res.data

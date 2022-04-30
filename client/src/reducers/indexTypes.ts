@@ -51,7 +51,7 @@ interface loadUser {
   type: ActionType.USER_LOADED;
   payload: string[];
 }
-
+  
 interface loginFail {
   type: ActionType.LOGIN_FAIL;
   payload: null;

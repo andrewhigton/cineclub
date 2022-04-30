@@ -46,7 +46,8 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
 
 // create film
 // export const createFilm = ( formData: string, history needed? ) => async dispatch => {
-  export const createFilm = ( formData, history) => async (dispatch: Dispatch<ActionFilms>) => 
+  export const createFilm = ( formData ) => async (dispatch: Dispatch<ActionFilms>) => 
+  // export const createFilm = ( formData, history) => async (dispatch: Dispatch<ActionFilms>) => 
   {
   try {
     const config = {
@@ -60,7 +61,7 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
       type: ActionType.GET_FILM,
       payload: res.data
     });
-    history.push('/film/dashboard');
+    // history.push('/film/dashboard');
   } catch (err) {
     // const errors = err.response.data.errors;
 
@@ -95,13 +96,14 @@ export const updateFilm = (formData, history) => async (dispatch: Dispatch<Actio
       }
     };
 
+    //need to create this as a named expoertr function??
     const res = await axios.put('/api/film/booking', formData, config);
     dispatch({
       type: ActionType.UPDATE_FILM,
       payload: res.data
       });
     alert('Thanks for your booking');
-    history.push('/film/dashboard');
+    //history.push('/film/dashboard');
   } catch (err) {
     // const errors = err.response.data.errors;
 

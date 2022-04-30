@@ -7,42 +7,38 @@ import { updateFilm } from '../../actions/film';
 import { updateUserTickets } from '../../actions/auth';
 import axios from 'axios';
 
-// interface ChildComponentProps extends RouteComponentProps<any> {
-//   history: any;
-//   // match: any;
-//   // location: any;
-// }
+interface ChildComponentProps extends RouteComponentProps<any> {
+  history: any;
+  // match: any;
+  // location: any;
+}
 
-// interface StripeProps {
-// 		price: number; 
-// 		filmData: filmType;
-// 		ticketData: ticketType;
-// 		updateFilm: (filmData) => void; 
-// 	  updateUserTickets: (ticketData) => void;
-// 	  // stripePayment:
-// 	}
+interface StripeProps {
+		price: number; 
+		filmData: filmType;
+		ticketData: ticketType;
+		updateFilm: (filmData) => void; 
+	  updateUserTickets: (ticketData) => void;
+	  // stripePayment:
+	}
 
-// type JointStripeProps = ChildComponentProps & StripeProps; 
+type JointStripeProps = ChildComponentProps & StripeProps; 
 
-const StripeCheckoutButton = ({ 
+const StripeCheckoutButton: JointStripeProps = ({ 
 		price, 
 		filmData, 
 		ticketData, 
 		updateFilm, 
 	  updateUserTickets,
-		// history, 
+		history, 
 		// location 
 	}) => {
 
-	// console.log(price)
-	// console.log(filmData)
-	// console.log(ticketData)
 
 			const priceForStripe = price * 100;
-			const publishableKey = 'pk_test_GxoLwpaJRAn1kdTQGlL8EwZa00qqtVHbM3';
+			const publishableKey = 'pk_test_uccgS5cz3BgmQJF5Jpfi3zhe';			
 			
 			const onToken = token => {
-				// console.log(token)
 			if(isNaN(priceForStripe) || priceForStripe < 1) {
 				alert('Please add tickets before submitting');	
 				return; 
@@ -67,13 +63,14 @@ const StripeCheckoutButton = ({
 				}
 			 }, onPayment())
 			.then(response => {
-				// console.log(response)
+				console.log('resp is ' + response)
 			 	// alert('Payment succesful. We have sent your tickets to your email address and will notify when the film has been booked');	
-			 	window.location.replace('http://localhost:3000/film/dashboard');
+			 	history.push('/film/dashboard');
+			 	//window.location.replace('http://localhost:3000/film/dashboard');
 			 })
 			.catch(error => {
 				// console.log('Payment error: ', JSON.parse(error)); 	
-				console.log('Payment error: ' + error); 	
+				// console.log('Payment error: ' + error); 	
 			 	alert('Payment error. Please use the provided credit card details');	
 			 }) 
 	} 
