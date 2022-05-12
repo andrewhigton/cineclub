@@ -123,6 +123,82 @@ export const updateFilm = (formData, history) => async (dispatch: Dispatch<Actio
   }
 };
 
+
+export const stripePayment = () => {
+
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+try {
+    const amount = 200;
+    //const { amount } = JSON.parse(req.body.amount);
+    // const { amount } = JSON.parse(event.body);
+
+    const paymentIntent = stripe.paymentIntents.create({
+      amount,
+      currency: "GBP",
+      payment_method_types: ["card"],
+    });
+    //so not getting anything back here
+    console.log(paymentIntent)
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ paymentIntent }),
+    };
+  } catch (error) {
+    console.log({ error });
+
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error }),
+    };
+  }
+
+}
+
+//     const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+//     const amount = 200 
+//     try {
+//         //not even getting to this
+//         console.log('called2 amount ')
+
+//     // JSON.parse(req.body.amount)
+//     // const { amount } = JSON.parse(event.body);
+    
+//     const paymentIntent = stripe.paymentIntents.create({
+//       amount,
+//       currency: "GBP",
+//       payment_method_types: ["card"],
+//     });
+// console.log('called2 ' + paymentIntent)
+//     return {
+//       statusCode: 200,
+//       body: JSON.stringify({ paymentIntent }),
+//     };
+//   } catch (error) {
+//     console.log({ error });
+// console.log('called3')
+//     return {
+//       statusCode: 400,
+//       body: JSON.stringify({ error }),
+//     };
+//   }
+
+
+// }
+    // axios.post(
+      
+      
+    //   const response = await fetch('/api/film/payment', {
+    //   method: 'post',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ amount: amount * 100 }),
+
+
+
+
 // export const stripePayment = (priceForStripe, token) => async dispatch => {
     
 //     axios.post(

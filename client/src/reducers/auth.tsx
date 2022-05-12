@@ -24,6 +24,7 @@ const auth = (
   state: RepositoriesState = initialState, 
   action: ActionUser
   ): RepositoriesState => {
+ 
   
   let payload;  
   if(action.payload) {

@@ -38,6 +38,7 @@ const App: React.FC = () => {
             <Route exact path='/howitworks' component={HowItWorks} />          
             
             <PrivateRoute path='/api/film/:id' component={BookingPage} /> 
+            {/*<PrivateRoute path='/api/film/:id' component={payment-intents} /> */}
             <PrivateRoute path='/film/dashboard' component={Dashboard}/>
             <PrivateRoute path='/create-film' component={CreateFilm} />
 

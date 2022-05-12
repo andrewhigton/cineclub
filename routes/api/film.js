@@ -21,27 +21,35 @@ const { check, validationResult } = require('express-validator');
 			}
 		});
 
-// app.post('/payment', (req, res) => {
-router.post('/payment', (req, res) => {
-  console.log('token is ' + req.body.token.id)
 
-  const body = {
-    source: req.body.token.id,
-    amount: req.body.amount,
-    currency: 'GBP'
+router.post('/payment', async (req, res) => {
+
+const stripe = require("stripe")(process.env.SECRET_KEY);
+//const { amount } = req.body;
+const amount = 200;
+
+
+	try {
+ 
+    //const { amount } = JSON.parse(req.body.amount);
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency: "usd",
+      payment_method_types: ["card"],
+    
+    });
+    
+    res.status(200).send(paymentIntent.client_secret);
+
+} catch (error) {
+    console.log({ error });
+
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error }),
+    };
   }
 
-  console.log('body is ' + body.source)
-  stripe.charges.create(body, (stripeErr, stripeRes) => {
-    if (stripeErr) {
-      console.log('server err is ' + stripeErr)
-      res.status(500).send({ error: stripeErr });
-    } else {
-      return res.redirect('/');
-      console.log('res is ' + res)
-      res.status(200).send({ success: stripeRes });
-    }
-  });
 })
 
 

@@ -27,6 +27,7 @@ const formattedDate = time.format('D MMMM YYYY');
   return (
 
       <div className={`film film-border _${index}`}>
+        
         <img src={image} alt='' className='small-film-pic'/>
         <p>{title}</p>
         <p>{cinema}</p>
@@ -39,6 +40,7 @@ const formattedDate = time.format('D MMMM YYYY');
             Buy tickets
             </button>
             </Link>
+      
       </div> 
     )
   }  

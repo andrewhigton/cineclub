@@ -33,6 +33,8 @@ app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'))
 app.use('/api/film', require('./routes/api/film'))
 
+// app.use('/api/payment-intents', require('./routes/api/payment-intents'))
+
 //serve static assets in production
 const PORT = process.env.PORT || 5000;
 
