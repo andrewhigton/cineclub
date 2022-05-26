@@ -1,20 +1,20 @@
 import React, { Fragment } from 'react';
 import Spinner from '../spinner/Spinner';
 import Film from '../films/Film';
-import { userType, filmsType } from '../componentTypes/componentTypes';
+import { userType, filmsType } from '../../utils/componentTypes';
 import '../../App.css';
 import './Dashboard.css';
 
 interface DashFilmsProps {
     films: filmsType;
     user: userType;
-    loading: boolean;
+    filmLoading: boolean;
 }
 
-const DashboardFilms: React.FC<DashFilmsProps> = ({ films, user, loading }) => {
+const DashboardFilms: React.FC<DashFilmsProps> = ({ user, films, filmLoading }) => {
     
   return (
-     loading && films === null ? <Spinner /> : 
+     filmLoading && films === null ? <Spinner /> : 
         <Fragment>
         <div className='your-films'>
         {films.map(item => (

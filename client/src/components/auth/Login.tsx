@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, FormEvent } from 'react';
 import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -24,7 +24,7 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 	const onChange = e => setFormData
 	({...formData, [e.target.name]: e.target.value });
 
-	const onSubmit = async e => {  
+	const onSubmit = async (e: FormEvent<HTMLFormElement>)  => {  
 		e.preventDefault(); 
 		
 		if(email === '' || password === '') {
@@ -57,14 +57,13 @@ return <div className='auth-pages'>
 		            name="password"
 		            value={password}
 		          	onChange={e => onChange(e)} 
-		            // /
-		            // minLength="3"
+		            // minlength="4"
 		          />
 		        </div>
-		        <input type="submit" className="btn btn-primary" value="Login" />
+		        <input type="submit" className="btn" value="Login" />
 		      </form>
 		      <p className="lead">
-		        Don't have an account? <Link className="reg" to="/register">Sign Up</Link>
+		        Don't have an account? <Link to="/register">Sign Up</Link>
 		      </p>
 		   </div>
 }

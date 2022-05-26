@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
-import { filmInterface, ChildComponentProps } from '../components/componentTypes/componentTypes';
+import { filmInterface, ChildComponentProps } from '../utils/componentTypes';
 import { getFilmById, updateFilm } from '../actions/film';
 import CheckoutFilm from '../components/checkout-film/Checkout-Film'
 

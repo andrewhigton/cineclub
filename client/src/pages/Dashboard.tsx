@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Footer from '../components/footer/Footer';
 import { loadFilms } from '../actions/film';
-import { userType, filmsType } from '../components/componentTypes/componentTypes';
+import { userType, filmsType, AuthProps, FilmProps } from '../utils/componentTypes';
 import DashboardTickets from '../components/user-dashboard/Dashboard-Tickets';
 import DashboardFilms from '../components/user-dashboard/Dashboard-Films';
 
@@ -11,14 +11,10 @@ interface ChildComponentProps extends RouteComponentProps<any> {
   history: any
 }
 
+
 interface DashboardProps {  
-  auth: {
-    user: userType,
-    loading: boolean;
-  };
-    film: {
-    films: filmsType,
-      };
+  auth: AuthProps
+  film: FilmProps,   
   loadFilms: () => void;
 }
 
@@ -26,7 +22,7 @@ type JointDashboardProps = DashboardProps & ChildComponentProps;
 
 const Dashboard: React.FC<JointDashboardProps> = ({ 
   auth: { user, loading }, 
-  film: { films },
+  film: { films, filmLoading },
   loadFilms,
   history
   }) => {
@@ -55,7 +51,7 @@ return (
           <DashboardFilms
           user={user}
           films={films}
-          loading={loading}
+          filmLoading={filmLoading}
           />
           </div>
           </div>

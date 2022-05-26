@@ -1,9 +1,13 @@
+
+.film-border {}
+
 .all-screenings {
   display: block;
   max-width: 93%;
   justify-content: center; 
   margin: auto;
   margin-top: -12vh;
+  background-color: white;
   /*border: 5px solid black;*/
 }
 
@@ -16,35 +20,45 @@
   margin-top: 5vh;
   padding-bottom: 4vh;
   margin-bottom: 14vh;
-  border: 10px #864747 solid; 
+  
 }
 
 .all-screenings-title {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 25px;
+  /*font-family: 'Raleway', sans-serif;*/
+  /*color: #864747;*/
+  /*left: 100px;*/
+  margin-left: 2vw;
+  margin-top:4vh;
+  margin-bottom: 8vh;
+}
+
+.film-page-title {
+  text-transform: uppercase;
+  font-size: 35px;
   font-family: 'Raleway', sans-serif;
   color: #864747;
-  left: 100px;
-  margin-left: 6vw;
+  text-align: center;
+  margin-left: 2vw;
+  margin-top:7vh;
+  margin-bottom: 4vh;
+  /*margin: 0 auto;*/
 }
 
 .film {
     font-family: 'Limelight', cursive;
     text-align: center;
     width: 280px;
-    /*height: 69vh;*/
     min-width: 280px;
-    /*margin-right: 2vw;*/
     color: white;
+    margin: initial;
     margin-top: -3.5vh;
     margin-bottom: 7vh;
-    padding: 2vw;
-    margin-left: 13px;
+    margin-left: 20px;
 }
 
 .view-all-link {
-    /*top: -10vh;*/
-    margin-top:-23vh;
     margin-bottom: 9vh;
     margin-right: 7vw;
     text-transform: uppercase;
@@ -60,9 +74,11 @@
 .small-film-pic {
   width: 240px;
   height: 150px;
-  margin-top: 1vh;
-  margin-bottom: 3vh;
-  position: relative;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  /*margin-right: 3vw;*/
+
 }
 
 
@@ -105,14 +121,10 @@
 }
 
 .film-border {
-  top: 200px;
-  left: 50%;
-  transform: translate(-0%);
-  background: #111111;
-  overflow: hidden;
+  background: grey;
 }
 
-.film-border::before {
+/*.film-border::before {
   content: "";
   position: absolute;
   top: 4px;
@@ -132,9 +144,9 @@
   height: 8px;
   background: white;
   box-shadow: 4px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
-}
+}*/
 
-.film-border div {
+/*.film-border div {
   width: 90px;
   height: 60%;
   top: 50%;
@@ -143,4 +155,4 @@
   box-shadow: inset 0px 0px 10px 0px #b7410e;
   display: inline-block;
   margin-top: 50px;
-}
+}*/

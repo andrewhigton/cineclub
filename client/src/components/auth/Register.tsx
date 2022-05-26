@@ -86,10 +86,10 @@ const Register:React.FC<RegisterProps> = ({ register, isAuthenticated }) => {
             onChange={e => onChange(e)}
           />
         </div>
-        <input type='submit' className='btn btn-primary' value='Register' />
+        <input type='submit' className='btn' value='Register' />
       </form>
       <p className='lead'>
-        Already have an account? <Link className="reg" to='/login'>Sign In</Link>
+        Already have an account? <Link to='/login'>Sign In</Link>
       </p>
     </div>
   );

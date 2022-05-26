@@ -1,4 +1,19 @@
 .how-it-works {
-	margin-left: 5vw;
+	margin-left: 3vw;
 	margin-bottom: 20px;
+	line-height: 2.6;
+}
+
+.how-it-works-text {
+	font-size: 25px;
+	margin-left: -30px;
+}
+
+ul {
+	text-decoration: underline;
+}
+
+
+img {
+	width: 800px;
 }

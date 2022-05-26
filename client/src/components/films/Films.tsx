@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Stack from 'react-bootstrap/Stack';
+import { Container, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import Film from './Film';
 import './Films.css';
@@ -28,26 +30,26 @@ const Films: React.FC<FilmsProps> = ({
 	if (films === null) return null;
 	return (
 		
-        	<div className="all-screenings">
+        	<div className="">
         	<div>
 	    		<h2 className="all-screenings-title">Latest films</h2>
 	    	</div>	
-	    	<div className="films-list">
-	    	
-	    	{films.slice(0,6).map((item, index) => {
-				return <Film
-				index={index}
-				film={item}
-				key={item._id}
-	    		/>
-          	})
-           }
+	    
+	    	<div className="row justify-content-center">
+		    	{films.slice(0,7).map((item, index) => {
+					return <Film
+					index={index}
+					film={item}
+					key={item._id}
+		    		/>
+	          	})
+	           }        
             </div>
             <Link to='/film' className="view-all-link">
-           		{/*<p>View all >></p>*/}
            		<p>View all</p>
            	</Link>
            </div>
+      
 	)
 }
 

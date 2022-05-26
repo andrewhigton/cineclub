@@ -25,7 +25,7 @@ const { check, validationResult } = require('express-validator');
 router.post('/payment', async (req, res) => {
 
 const stripe = require("stripe")(process.env.SECRET_KEY);
-//const { amount } = req.body;
+
 const amount = 200;
 
 

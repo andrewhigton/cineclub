@@ -22,14 +22,13 @@ const Landing: React.FC<LandingProps> = ({
 	  	}, [loadFilms]);
 	 
 	return (
-		<section>
+		<section className="landing">
 	      <div className="carousel">
 		    <FilmCarousel/>	          
 	       </div>
 	       <div >
 			<Films/>	       	
 	       </div>
-	      <Footer/> 
 	    </section>
 		)
 	}

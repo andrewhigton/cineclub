@@ -4,14 +4,14 @@ import { ActionFilms } from './indexTypes';
 interface RepositoriesState {
   film: {} | null;
   films: string[];
-  loading: boolean;
+  filmLoading: boolean;
   error: any;
 };
 
 const initialState = {
   film: null,
   films: [],
-  loading: true,
+  filmLoading: true,
   error: {}
 };
 
@@ -29,25 +29,25 @@ const film = (
           return {
             ...state,
             film: payload,
-            loading: false 
+            filmLoading: false 
           };
           case ActionType.GET_FILMS:
           return {
             ...state,
             films: payload,
-            loading: false 
+            filmLoading: false 
           };
           case ActionType.UPDATE_FILM:
           return {
             ...state,
             film: payload,
-            loading: false 
+            filmLoading: false 
           }; 
           case ActionType.FILM_ERROR:
           return {
             ...state,
             error: payload,
-            loading: false
+            filmLoading: false
           }; 
           //this needed?
           case ActionType.CLEAR_FILM:
@@ -55,7 +55,7 @@ const film = (
             ...state,
             film: null,
             films: [],
-            loading: false
+            filmLoading: false
           };
           default:
             return state

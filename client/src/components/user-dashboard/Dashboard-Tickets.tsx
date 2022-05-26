@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import Spinner from '../spinner/Spinner';
 import Ticket from '../ticket/Ticket';
-import { userType } from '../componentTypes/componentTypes';
+import { userType } from '../../utils/componentTypes';
 import '../../App.css';
 import './Dashboard.css'; 
 

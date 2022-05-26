@@ -1,45 +1,32 @@
-a  {
-  color: #864747 !important;
-}
-
-.navbar-light {
-    border-color: white;
-}
-
 .navbar {
-     font-family: 'Limelight', cursive;
-     background-color: white !important;
-     top: -1vh;
-     margin-bottom: 5vh;
-     max-width: 1300px;
-     margin: 0 auto;
-    text-align: center;
-  }
-
-.show {
-right: 350px;
+    margin-left: 20px;
 }
 
-.nav-right {
-    margin-left: 11vw;
+.navbar-title {
+    font-size: 25px;
 }
 
-.nav-right-logged-out {
-    margin-left: 29vw;   
+.nav-left {
+    margin-left: 0px;
 }
 
-.nav-top-line {
-    overflow:auto;
-    position: fixed;
-    width: 100%;
-    z-index: 5;
-    overflow: hidden;
+.logo-float-left {
+    float: left;
+    left: 0;
 }
 
-body .navbar-brand {
-    font-size: 1.7em;  
-  }
+.hamburger-signedout {
+    float: right;
+    margin-right: -10px;
+    margin-left: 10vw;
+    text-align: right;
+    margin-top: 5px;
+}
 
-.howitworks {
-    padding-left: 2vh !important;
+.hamburger-signedin {
+    float: right;
+    right: 0;
+    margin-left: 5vw;
+    text-align: right;
+    margin-top: 4px;
 }

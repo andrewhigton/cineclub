@@ -1,5 +1,5 @@
 import React from 'react';
-import { ticketType } from '../componentTypes/componentTypes';
+import { ticketType } from '../../utils/componentTypes';
 import './Tickets.css';
 import '../../App.css'
 

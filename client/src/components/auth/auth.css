@@ -63,8 +63,8 @@ button {
 }
 
 .btn {
+  color: white;
   display: inline-block;
-  /*background: var(--light-color);*/
   background-color: #864747 !important;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;

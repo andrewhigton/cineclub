@@ -16,6 +16,7 @@ import setAuthToken from './utils/setAuthToken';
 import PrivateRoute from './components/routing/PrivateRoute';
 import { ActionType } from './actions/types';
 import { loadUser } from './actions/auth';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 if (localStorage.token) {
@@ -27,9 +28,11 @@ const App: React.FC = () => {
   return (
      <Router> 
       <Fragment >
+        <section className="container">
         <NavbarComponent  />
+
         <Route exact path='/' component={Landing} />
-        <section className="dark-overlay">
+        
         
           <Switch>
             <Route exact path='/register' component={Register} />
@@ -44,9 +47,11 @@ const App: React.FC = () => {
 
 
           </Switch>
+         
         </section>
-        
+      
       </Fragment>
+      <Footer/>    
     </Router> 
  );
 }
