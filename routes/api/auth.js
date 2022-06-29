@@ -21,15 +21,10 @@ router.get('/', auth, async (req, res) => {
   //works in postman, not here
 if(req.user.id) {
  try {
-   //console.log('request1 ' + req.user.id)
-   // console.log('line 18 called server')
    const user = await User.findById(req.user.id).select('-password');
    res.json(user);
-   console.log('request2 ' + user)
-   //so this is working. it's going wrong somewhere else
-   //auth works, but not feeding through to state. why?
+   
  } catch (err) {
-   //console.log('request3 ' + err)
    console.log(err.message);
    res.status(500).send('Server Error')
      } 
@@ -92,7 +87,7 @@ if(req.user.id) {
 
 
 // @route POST api/auth
-// @desc create or update user profile
+// @desc add tickets to user's profile
 // @access Private
 router.post('/ticket', [
     auth, 
@@ -127,8 +122,10 @@ router.post('/ticket', [
         try {
           let profile = await User.findOne({ user: req.body.email });
           profile.tickets.unshift(newTicket);
-        await profile.save();
-        res.json(profile);
+          await profile.save();
+          res.json(profile);
+          console.log('propfile ', res.json(profile));
+
           } catch (err) {
             console.error(err.message);
             res.status(500).send('Not updated');

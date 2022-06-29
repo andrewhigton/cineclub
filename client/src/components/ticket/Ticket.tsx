@@ -3,12 +3,20 @@ import { ticketType } from '../../utils/componentTypes';
 import './Tickets.css';
 import '../../App.css'
 
+const moment = require('moment');
+
 interface TicketProps {
-    ticket: ticketType
+    ticket: ticketType;
+    filmtime?: number;
 }
 
+interface FilmProps {
+	filmtime: number
+}
 
-const Ticket: React.FC<TicketProps> = ({ ticket }) => {
+type JointProps = TicketProps & FilmProps
+
+const Ticket: React.FC<JointProps> = ({ ticket, filmtime }) => {
 const { title, 
 		numberOfTickets,
 		date,
@@ -17,6 +25,9 @@ const { title,
 		crowdfundTarget, 
 		totalsoFar
 	} = ticket;
+
+	const formatDate = moment(date)
+	const formattedDate = formatDate.format('D MMMM YYYY');
 
   return (
       <div className="tickets">
@@ -33,19 +44,22 @@ const { title,
 		  <div className="ticket__body">
 		    <section className="ticket__section">
 		      <p>Film: {title}</p>
-		      <p>Date: {date}</p>
+		      <p>Date: {formattedDate}</p>
+		      <p>Time: {filmtime}</p>
+		    
 		      
-		      <p>Cinema: {cinema}</p>
+		      <p>Cinema:</p>
+		      <p>{cinema}</p>
 		    </section>
 		    <section className="ticket__section">
-		      <h3> Crowdfund target</h3>
+		      
 		      <p>Number sold: {totalsoFar}</p>
-		      <p>Needed: {crowdfundTarget}</p>
+		      <p> Crowdfund target: {crowdfundTarget}</p>
 		      <p>Number of tickets: {numberOfTickets}</p>
 		    </section>
 		  </div>
 		  <footer className="ticket__footer">
-		    <h3>Total: £{cost}</h3>
+		    <p>Total: £{cost}</p>
 		    <span></span>
 		  </footer>
 		</article>

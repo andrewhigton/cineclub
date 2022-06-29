@@ -1,4 +1,4 @@
-  import React, { Fragment, useState } from 'react';
+  import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { register } from '../../actions/auth';
@@ -10,7 +10,7 @@ interface RegisterProps {
 }
 
 const Register:React.FC<RegisterProps> = ({ register, isAuthenticated }) => {
-  
+
   const [formData, setFormData] = useState<{
     name: string,
     email: string | number,

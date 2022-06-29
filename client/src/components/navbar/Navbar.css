@@ -3,17 +3,13 @@
 }
 
 .navbar-title {
-    font-size: 25px;
+    font-size: 1.5rem;
 }
 
-.nav-left {
-    margin-left: 0px;
+.dropdown-item {
+    padding: 10px;
 }
 
-.logo-float-left {
-    float: left;
-    left: 0;
-}
 
 .hamburger-signedout {
     float: right;
@@ -24,9 +20,7 @@
 }
 
 .hamburger-signedin {
-    float: right;
-    right: 0;
-    margin-left: 5vw;
     text-align: right;
-    margin-top: 4px;
+    margin-top: 5px;
+    padding-left: 270px;
 }

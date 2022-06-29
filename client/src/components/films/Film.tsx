@@ -23,10 +23,10 @@ const Film: React.FC<FilmProps> = ({ film, index}) => {
 const { _id, title,date,filmtime,cinema,image,ticketPrice,crowdfundTarget,totalsoFar } = film;
 const time = moment(date)
 const formattedDate = time.format('D MMMM YYYY');
-console.log(image)
+
   return (
     
-
+    
       <div className={`film film-border _${index}`}>
         
         <img src={image} alt='' className='small-film-pic'/>
@@ -42,7 +42,8 @@ console.log(image)
             </button>
             </Link>
       
-      </div> 
+      </div>
+    
     )
   }  
 

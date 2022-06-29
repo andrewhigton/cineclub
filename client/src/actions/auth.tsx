@@ -2,14 +2,39 @@ import axios from 'axios';
 import { ActionType } from './types';
 import { ActionUser } from '../reducers/indexTypes';
 import { Dispatch } from 'redux';
-import { RouteComponentProps } from 'react-router-dom';
+import { ticketType } from '../utils/componentTypes';
 import setAuthToken from '../utils/setAuthToken';
 
-interface ChildComponentProps extends RouteComponentProps<any> {
- history: any;
-}
+// Add Tickets
+export const updateUserTickets = (formData: ticketType, history ) => async (dispatch: Dispatch<ActionUser>) => {
+  
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
 
-type JointComponentProps = ChildComponentProps & ActionUser; 
+    
+    const res = await axios.post('/api/users/ticket', formData, config);
+    
+    dispatch({
+      type: ActionType.UPDATE_USER,
+      payload: res.data
+    });
+    history.push('/');
+  } catch (err) {
+    if (err) {
+      alert(err)
+      dispatch({
+      type: ActionType.LOGIN_FAIL,
+      payload: null
+    });
+    }
+  }
+};
+
+
 
 // Load User
 export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
@@ -24,6 +49,7 @@ try {
       type: ActionType.USER_LOADED,
       payload: res.data
     })
+
 } catch (err) {
           alert('Please check your email and password')
           dispatch({
@@ -103,35 +129,6 @@ export const login = (email: string | number, password: string | number) => asyn
   }
 };
 
-// Add Tickets
-export const updateUserTickets = (formData, history) =>
-
-async (dispatch: Dispatch<ActionUser>) => {
-  try {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-     
-    const res = await axios.post('/api/users/ticket', formData, config);
-    console.log('res ' + res)
-    dispatch({
-      type: ActionType.UPDATE_USER,
-      payload: res.data
-    });
-    //history.push('/film/dashboard');
-  } catch (err) {
-    if (err) {
-      alert(err)
-      dispatch({
-      type: ActionType.LOGIN_FAIL,
-      payload: null
-    });
-    }
-  }
-};
 
 export const deleteTickets = (id: string) => async dispatch => {
   try {

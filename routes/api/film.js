@@ -2,7 +2,6 @@ const express = require ('express');
 const router = express.Router()
 const auth = require('../../middleware/auth');
 const Film = require('../../models/Film');
-// const config = require('config');
 const { check, validationResult } = require('express-validator');
 
 // @route GET api/film
@@ -26,15 +25,16 @@ router.post('/payment', async (req, res) => {
 
 const stripe = require("stripe")(process.env.SECRET_KEY);
 
-const amount = 200;
+console.log('req is ',  req.body)
+console.log('amount ',  req.body.amount)
 
+	const amount = req.body.amount * 100;
 
 	try {
- 
-    //const { amount } = JSON.parse(req.body.amount);
+    
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: "usd",
+      currency: "gbp",
       payment_method_types: ["card"],
     
     });
@@ -43,7 +43,6 @@ const amount = 200;
 
 } catch (error) {
     console.log({ error });
-
     return {
       statusCode: 400,
       body: JSON.stringify({ error }),
@@ -153,13 +152,13 @@ router.post('/', [
       film = new Film({
         user_id,
         title, 
-    	date,
-    	filmtime, 
-    	cinema,
-    	image,
-    	ticketPrice, 
-    	crowdfundTarget, 
-    	totalsoFar 
+	    	date,
+	    	filmtime, 
+	    	cinema,
+	    	image,
+	    	ticketPrice, 
+	    	crowdfundTarget, 
+	    	totalsoFar 
       });
 
       await film.save();
@@ -215,11 +214,8 @@ router.post('/', [
 	  	if(ticketPrice) filmFields.ticketPrice = ticketPrice;
 		if(crowdfundTarget) filmFields.crowdfundTarget= crowdfundTarget;
 		if(totalsoFar) filmFields.totalsoFar= totalsoFar;
-	  		// console.log(filmFields)	
 	  		try {
-	  			//const updatedFilm = await Film.findOne({ films: req._id });
 	  			let updatedFilm = await Film.findOne({ _id: req.body._id });
-					//console.log(res.json(updatedFilm))
 	  				updatedFilm = await Film.findOneAndUpdate(
 	  					{ _id: req.body._id },
 	  					{ $set: filmFields },
@@ -252,11 +248,6 @@ router.post('/', [
 		// @desc	 delete profile, user and post
 		// @access Private
 
-		//need user id for this, why? where is it required? 
-		//it works though. just log in
-		//problem is, anyone logged in can delete!
-		//how to restrict it to one master user? 
-		//just remove auth, and don't put it on the site
 		router.delete('/:film_id', auth, async (req, res) => {
 			try {
 				await Film.findOneAndRemove(req.params.film_id)

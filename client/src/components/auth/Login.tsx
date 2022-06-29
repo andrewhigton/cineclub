@@ -1,7 +1,6 @@
-import React, { Fragment, useState, FormEvent } from 'react';
-import { Link, Redirect } from 'react-router-dom'
+import React, { useState, FormEvent } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
 import './auth.css';
 
@@ -11,6 +10,8 @@ interface LoginProps {
 }
 
 const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
+	
+
 	const  [formData, setFormData] = useState<{
 		email: string | number,
 		password: string | number | undefined,
@@ -34,11 +35,13 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 		login(email, password)
 		}
 
-		if(isAuthenticated) {
-			return <Redirect to="/film/dashboard"/>;
-		}
+		if (isAuthenticated) {
+		    
+		    return <Redirect to='/film/dashboard' />;
+		  }
 
-return <div className='auth-pages'>
+	
+	return <div className='auth-pages'>
 		      <p className="lead">Sign in to your account</p>
 		      <form className="form" action="create-profile.html" onSubmit={e => onSubmit(e)}>
 		        <div className="form-group">
@@ -65,6 +68,7 @@ return <div className='auth-pages'>
 		      <p className="lead">
 		        Don't have an account? <Link to="/register">Sign Up</Link>
 		      </p>
+		      <p>* Example account: email: andrew@test.com password: 1234 *</p>
 		   </div>
 }
 

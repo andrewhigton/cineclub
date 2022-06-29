@@ -1,26 +1,33 @@
-import React, { useState, FormEvent } from 'react';
-
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
-import { ticketType, filmInterface, filmType } from '../../utils/componentTypes';
+import { Link } from 'react-router-dom';
+import { ticketType, filmInterface, filmType, ChildComponentProps } from '../../utils/componentTypes';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button';
-// import { updateUserTickets } from '../../actions/auth';
+
 import './checkoutfilm.css'
 
 interface CheckoutFilmProps {
-  films: filmInterface 
+  films: filmInterface;
+  match:() => void;
+  location:() => void;
+  history: () => void;
   };
-  
-const CheckoutFilm: React.FC<CheckoutFilmProps> = ({ 
-    films: {film, loading}, 
-  }) => {
-   
+
+type JointCheckoutFilmProps = ChildComponentProps & CheckoutFilmProps
+
+const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({ 
+    films,
+    history
+    }) => {   
+
+  const { film } = films;
 
   const [filmData, setFilmData] = useState<filmType>({
     _id: film._id,
     user: film.user,
     title: film.title,
     date: film.date,
+    filmtime: film.filmtime,
     cinema: film.cinema,
     image: film.image,
     ticketPrice: film.ticketPrice,
@@ -41,6 +48,7 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
     cost: 0
   });
     
+   
     const onChange = (e) => {   
     let ticketsTotal = parseInt(e.target.value);
     let bookingTotal = parseInt(film.ticketPrice) * parseInt(e.target.value); 
@@ -48,6 +56,7 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
     setBookingCost(bookingTotal)
     setTotalSoFar(totalTicketsBooked);
     setTicketTotalSoFar(totalTicketsBooked, bookingTotal, ticketsTotal);
+
   }
 
   const setTotalSoFar = (totalTicketsBooked) => {
@@ -60,6 +69,10 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
      cost: bookingTotal,
      numberOfTickets: ticketsTotal });
   } 
+
+  const moment = require('moment');
+  const formatDate = moment(film.date)
+  const formattedDate = formatDate.format('D MMMM YYYY');
  
   return (
       <>
@@ -68,7 +81,7 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
             <span>Film: {film.title}</span>
           </div>
           <div>
-            <span>Date: {film.date} </span>
+            <span>Date: {formattedDate} </span>
           </div>
           <div className='header-block'>
             <span>Price: £{film.ticketPrice} </span>
@@ -81,12 +94,13 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
             <span>Tickets sold: {film.totalsoFar}</span>
           </div>
         
-        <form className="form">
-          <div className="form-ticket">   
+        <form className="checkout-form">
+          <div>   
             <input
+              className='checkout-tickets'
               type='number'
               min='0'
-              placeholder='Enter number of tickets'
+              placeholder='Number of tickets'
               name='tickets'
               onChange={e => onChange(e)}
               required
@@ -99,18 +113,18 @@ const CheckoutFilm: React.FC<CheckoutFilmProps> = ({
               : bookingCost}
             </span>
           </div>
+          <div className="">
+              <span> 
+                <StripeCheckoutButton
+                  history={history}
+                  filmData={filmData}
+                  ticketData={ticketData}
+                  price={bookingCost}
+                 />
+              </span>
+          </div>
           <div>
-            <span> 
-              <StripeCheckoutButton
-               // filmData={filmData}
-               // ticketData={ticketData}
-               price={bookingCost} 
-               />
-            </span>
-            <div>
-            <Link className='checkout-button btn btn-back' to='/film/dashboard'>Go Back
-            </Link>
-            </div>
+            <Link className='go-back btn btn-back' to='/film/dashboard'>Go Back</Link>
           </div>
           </div>
         </>
@@ -122,5 +136,6 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(CheckoutFilm); 
-  // updateUserTickets 
-// })(withRouter(CheckoutFilm));
+
+// const film = useSelector((state) => state.film.film)
+// const loading = useSelector((state) => state.film.loading)

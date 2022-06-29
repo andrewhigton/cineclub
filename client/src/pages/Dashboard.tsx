@@ -1,9 +1,10 @@
 import React, { Fragment, useEffect } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import Footer from '../components/footer/Footer';
+import Spinner from '../components/spinner/Spinner'
 import { loadFilms } from '../actions/film';
-import { userType, filmsType, AuthProps, FilmProps } from '../utils/componentTypes';
+import { AuthProps, FilmProps } from '../utils/componentTypes';
 import DashboardTickets from '../components/user-dashboard/Dashboard-Tickets';
 import DashboardFilms from '../components/user-dashboard/Dashboard-Films';
 
@@ -11,9 +12,8 @@ interface ChildComponentProps extends RouteComponentProps<any> {
   history: any
 }
 
-
 interface DashboardProps {  
-  auth: AuthProps
+  auth: AuthProps,
   film: FilmProps,   
   loadFilms: () => void;
 }
@@ -21,7 +21,7 @@ interface DashboardProps {
 type JointDashboardProps = DashboardProps & ChildComponentProps;
 
 const Dashboard: React.FC<JointDashboardProps> = ({ 
-  auth: { user, loading }, 
+  auth: { user }, 
   film: { films, filmLoading },
   loadFilms,
   history
@@ -32,7 +32,7 @@ const Dashboard: React.FC<JointDashboardProps> = ({
   }, [loadFilms]); 
 
 return (
-  !user ? <h2>please wait</h2> 
+  !user ? <Spinner />
   : <Fragment>    
 
           <div>
@@ -41,10 +41,7 @@ return (
           <div className="dashboard-display">
           <div className='tickets-films-block'>
           <h2 className='ticket-film-head'>Your tickets</h2>
-          <DashboardTickets
-          user={user}
-          loading={loading}
-           />
+          <DashboardTickets />
           </div>
           <div className='tickets-films-block'>
           <h2 className='ticket-film-head'>Your films</h2>

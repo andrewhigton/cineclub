@@ -4,6 +4,8 @@ import storage from 'redux-persist/lib/storage';
 import auth from './auth';
 import film from './film';
 
+export type RootState = ReturnType<typeof rootReducer>;
+
 const persistConfig = {
 	key: 'root',
 	storage,
@@ -17,4 +19,3 @@ const rootReducer = combineReducers({
 
 export default persistReducer(persistConfig, rootReducer);
 
-export type RootState = ReturnType<typeof rootReducer>;

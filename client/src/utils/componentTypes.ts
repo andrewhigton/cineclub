@@ -5,6 +5,7 @@ export type ticketType = {
         cost: number,
         crowdfundTarget: number,
         date: string,
+        filmtime?: number,
         numberOfTickets: number,
         ticketPrice: string,
         title: string,
@@ -15,11 +16,13 @@ export type userType =  {
     _id: number,
     name: string,
     email: string,
+    loading: boolean,
     tickets: Array<{
       cinema: string,
         cost: number,
         crowdfundTarget: number,
         date: string,
+        filmtime?: number,
         numberOfTickets: number,
         ticketPrice: string,
         title: string,
@@ -48,6 +51,7 @@ export interface filmInterface {
         user: string,
         title: string,
         date: string,
+        filmtime: number,
         cinema: string,
         image: string,
         ticketPrice: string,
@@ -62,6 +66,7 @@ export type filmType = {
         user: string,
         title: string,
         date: string,
+        filmtime: number,
         cinema: string,
         image: string,
         ticketPrice: string,
@@ -84,10 +89,9 @@ export interface FilmProps {
     filmLoading: boolean, 
 }
 
-    
-
-
+   
 export interface ChildComponentProps extends RouteComponentProps<any> {
-  match: any
-  history: any
+  match: any;
+  history: any;
+  location: any;
 }

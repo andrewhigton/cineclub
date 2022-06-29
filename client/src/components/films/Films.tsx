@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import Stack from 'react-bootstrap/Stack';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Film from './Film';
+import '../../App.css';
 import './Films.css';
+
 
 interface FilmsProps {
 	film: {
@@ -36,7 +35,7 @@ const Films: React.FC<FilmsProps> = ({
 	    	</div>	
 	    
 	    	<div className="row justify-content-center">
-		    	{films.slice(0,7).map((item, index) => {
+		    	{films.slice(0,8).map((item, index) => {
 					return <Film
 					index={index}
 					film={item}
@@ -48,13 +47,12 @@ const Films: React.FC<FilmsProps> = ({
             <Link to='/film' className="view-all-link">
            		<p>View all</p>
            	</Link>
-           </div>
-      
-	)
-}
+           </div>     
+			)
+		}
 
 const mapStateToProps = state => ({
 	film: state.film
 });
 
-export default withRouter(connect(mapStateToProps)(Films));
+export default connect(mapStateToProps)(Films);

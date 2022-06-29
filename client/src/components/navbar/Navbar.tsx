@@ -1,10 +1,8 @@
-import React, { Fragment, useState } from 'react';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/auth';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
@@ -28,14 +26,14 @@ const NavbarComponent: React.FC<NavbarProps> = ({
 		 <Navbar className="navbar" expand="lg">
 		   <Navbar.Brand className="navbar-title" href="/">SATURDAY CINEMA CLUB</Navbar.Brand>
 		    <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-		    <Navbar.Collapse className="hamburger-signedin" id="">
+		    <Navbar.Collapse className="hamburger-signedin">
 			   
-			   <Nav className="hamburger-signedin">
-		        <Nav.Link href="/film/dashboard">Your films and tickets</Nav.Link>
-		        <Nav.Link href="/film">All films</Nav.Link>
-		        <Nav.Link className="howitworks" href="/howitworks">How it works</Nav.Link>
-		        <Nav.Link href="/create-film">Create a screening</Nav.Link>
-		        <Nav.Link onClick={logout} href="/create-film">Logout</Nav.Link>
+			   <Nav className="">
+		        <NavDropdown.Item href="/film/dashboard">Your films and tickets</NavDropdown.Item>
+		        <NavDropdown.Item href="/film">All films</NavDropdown.Item>
+		        <NavDropdown.Item className="howitworks" href="/howitworks">How it works</NavDropdown.Item>
+		        <NavDropdown.Item href="/create-film">Create a screening</NavDropdown.Item>
+		        <NavDropdown.Item onClick={logout} href="/create-film">Logout</NavDropdown.Item>
 			   </Nav>
 			</Navbar.Collapse>
 			
@@ -67,4 +65,4 @@ const mapStateToProps = state => ({
 
 });
 
-export default withRouter(connect(mapStateToProps, { logout })(NavbarComponent));
+export default connect(mapStateToProps, { logout })(NavbarComponent);

@@ -1,9 +1,33 @@
 .checkout-page {
   margin-left: 20px;
-  font-size: 25px;
-  margin-top: 7vh;
+  font-size: 20px;
+  margin-top: 4vh;
+}
+
+.checkout {
+  background-color: #DCDCDC;
+  padding: 30px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
 .checkout-button {
-  margin-left: 0vw;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  margin-left: -2px;
+}
+
+.checkout-tickets {
+  padding: 10px;
+  border-radius: 10px;
+  border-width: thin;
+  border:  ;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.go-back {
+  width: 200px;
+  margin-left: -2px; 
 }

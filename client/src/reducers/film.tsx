@@ -1,25 +1,24 @@
 import { ActionType } from '../actions/types';
 import { ActionFilms } from './indexTypes';
 
-interface RepositoriesState {
+export interface FilmInitialStateType {
   film: {} | null;
   films: string[];
   filmLoading: boolean;
   error: any;
 };
 
-const initialState = {
+const initialState: FilmInitialStateType = {
   film: null,
-  films: [],
+  films: [] || null,
   filmLoading: true,
   error: {}
 };
 
 const film = (
-  state: RepositoriesState = initialState,
+  state = initialState,
   action: ActionFilms,
-  ): RepositoriesState => {
-
+  ) => {
         let payload;  
         if(action.payload) {
           payload = action.payload; 

@@ -1,36 +1,74 @@
 import React, { useState, FormEvent } from 'react';
-import { CardElement, useStripe, useElements,  } from '@stripe/react-stripe-js';
-import { StripeCardElement  } from '@stripe/stripe-js';
-import { FormContainer } from './stripe-button.styles';
-import { stripePayment } from '../../actions/film';
-// import { BUTTON_TYPE_CLASSES } from '../button/button.component';
-import { PaymentButton, PaymentFormContainer } from './stripe-button.styles';
+import { connect } from 'react-redux';
+import {  
+
+	useStripe, 
+	useElements, 
+	CardNumberElement, 
+	CardCvcElement, 
+	CardExpiryElement  
+} from '@stripe/react-stripe-js';
+import { updateUserTickets } from '../../actions/auth';
+import { updateFilm } from '../../actions/film';
+import { ticketType, filmType } from '../../utils/componentTypes';
+import Spinner from '../spinner/Spinner';
+import '../checkout-film/checkoutfilm.css'
 import axios from 'axios';
 
-const ifValidCardElement = (card: StripeCardElement | null): card is StripeCardElement => card === null; 
 
-const StripeCheckoutButton = ({price}) => {
+// const ifValidCardElement = (card: StripeCardElement | null): card is StripeCardElement => card === null;  
+
+interface TicketFilmTypes {
+	filmData: filmType;
+	ticketData: ticketType;
+	price: number;
+	updateUserTickets: (ticketDataForDispatch) => void; 
+	updateFilm: (filmDataForDispatch) => void; 
+	history;
+}
+
+//global vars for dispatch 
+let useHistory;
+let ticketDataForDispatch;
+let filmDataForDispatch;
+
+const StripeCheckoutButton: React.FC<TicketFilmTypes> = ({
+	filmData, 
+	ticketData, 
+	price,
+	updateUserTickets,
+	updateFilm,
+	history
+	}) => {
 
 const stripe = useStripe();
 const elements = useElements();
-let currentUser = 'bob';
-const [isProcessingPayment, setIsProcessingPayment] = useState(false)
+
+let [isProcessingPayment, setIsProcessingPayment] = useState(false)
+
+useHistory = history; 
+ticketDataForDispatch = ticketData;
+filmDataForDispatch = filmData;
 
 const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
-  	
+
 	e.preventDefault();
 	if(!stripe || !elements) {
 		return;
 	}
 
+	isProcessingPayment = true;
+
 	try  {
-	const response = await axios.post('http://localhost:5000/api/film/payment') 
+	const response = await axios.post('http://localhost:5000/api/film/payment', {
+  amount: price,
+	}
+) 
 	
 		const clientSecret = response.data;
- 	
-		const cardDetails = elements.getElement(CardElement)
-		if(!ifValidCardElement(cardDetails)) return;
 
+		const cardDetails = elements.getElement(CardNumberElement)
+		
 
 		if(cardDetails === null) return;
 
@@ -44,7 +82,9 @@ const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
     });
     
     if(paymentResult?.paymentIntent?.status === 'succeeded') {
-    	alert('payment success');
+    	updateUserTickets(ticketDataForDispatch);
+			updateFilm(filmDataForDispatch); 
+
     }
     
     setIsProcessingPayment(false);	
@@ -53,23 +93,54 @@ const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
 			if (err instanceof Error) {
 		  alert(err.message);
 			}
+		}
 	}
 
-}
+	const inputStyle = {
+      fontWeight: '1000',
+      fontSize: '17px',
+      lineHeight: '35px'
+		}
 
-
-	return (
-
-			<div> 
-				<PaymentFormContainer>
-      		<FormContainer onSubmit={paymentHandler}>
-	        	<h2>Credit Card Payment:</h2>
-	        	<CardElement />
-	        <button disabled={isProcessingPayment}>Pay Now</button>
-	      </FormContainer>
-    		</PaymentFormContainer>
+	return isProcessingPayment ? (
+		<Spinner />
+		) : (
+			<div className='checkout'>
+				<h3>Card Payment</h3>
+				<form onSubmit={paymentHandler}>
+					<CardNumberElement 
+					options={{
+   					style: {
+     					base: inputStyle,
+				   },
+				 }}
+				 />
+					<CardExpiryElement 
+						options={{
+	   					style: {
+	     					base: inputStyle,
+					   },
+					 }}
+					/>
+					<CardCvcElement 
+					options={{
+   					style: {
+     					base: inputStyle,
+					   },
+					 }}
+					/>
+					<button className='checkout-button' disabled={isProcessingPayment}>Pay Now</button>
+				</form>
 			</div>
+
 		 )
+	}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+     updateUserTickets: () => dispatch(updateUserTickets(ticketDataForDispatch, useHistory)),
+     updateFilm: () => dispatch(updateFilm(filmDataForDispatch)) 
+  }
 }
 
-export default StripeCheckoutButton;
+export default connect(null, mapDispatchToProps)(StripeCheckoutButton);

@@ -43,9 +43,8 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
 };
 
 // create film
-// export const createFilm = ( formData: string, history needed? ) => async dispatch => {
-  export const createFilm = ( formData ) => async (dispatch: Dispatch<ActionFilms>) => 
-  {
+export const createFilm = ( formData: string, history ) => async dispatch => {
+
   try {
     const config = {
       headers: {
@@ -58,7 +57,7 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
       type: ActionType.GET_FILM,
       payload: res.data
     });
-    // history.push('/film/dashboard');
+    history.push('/film/dashboard');
   } catch (err) {
 
     if (err) {
@@ -72,9 +71,8 @@ export const getFilmById = (film_id: number) => async (dispatch: Dispatch<Action
   }
 };
 
-// export const updateFilm = (formData, history needed?) => async dispatch => {
-export const updateFilm = (formData, history) => async (dispatch: Dispatch<ActionFilms>) => 
-{
+export const updateFilm = (formData) => async (dispatch: Dispatch<ActionFilms>) => {
+
   dispatch({ 
     type: ActionType.CLEAR_FILM,
     payload: null,
@@ -86,20 +84,15 @@ export const updateFilm = (formData, history) => async (dispatch: Dispatch<Actio
       }
     };
 
-    //need to create this as a named expoertr function??
+   
     const res = await axios.put('/api/film/booking', formData, config);
     dispatch({
       type: ActionType.UPDATE_FILM,
       payload: res.data
       });
     alert('Thanks for your booking');
-    //history.push('/film/dashboard');
   } catch (err) {
-    // const errors = err.response.data.errors;
-
-    // if (errors) {
-    //   alert(errors.forEach(error => dispatch(alert(error.msg, 'danger'))));
-    // }
+   
     if (err) {
       alert(err)
     }
@@ -108,40 +101,9 @@ export const updateFilm = (formData, history) => async (dispatch: Dispatch<Actio
     dispatch({
       type: ActionType.FILM_ERROR,
       payload: null
-      // payload: { msg: err.response.statusText, status: err.response.status }
+ 
     });
-  }
-};
-
-
-export const stripePayment = () => {
-
-
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-try {
-    const amount = 200;
-    //const { amount } = JSON.parse(req.body.amount);
-    // const { amount } = JSON.parse(event.body);
-
-    const paymentIntent = stripe.paymentIntents.create({
-      amount,
-      currency: "GBP",
-      payment_method_types: ["card"],
-    });
-  
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ paymentIntent }),
-    };
-  } catch (error) {
-    console.log({ error });
-
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error }),
-    };
-  }
+  };
 }
 
 // export const deleteFilm = id => async dispatch => {

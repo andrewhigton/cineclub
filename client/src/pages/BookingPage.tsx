@@ -1,36 +1,41 @@
 import React, { Fragment, useEffect } from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { filmInterface, ChildComponentProps } from '../utils/componentTypes';
-import { getFilmById, updateFilm } from '../actions/film';
+import { getFilmById } from '../actions/film';
 import CheckoutFilm from '../components/checkout-film/Checkout-Film'
 
 interface BookingProps {
-	// updateFilm: () => void;
+	
 	getFilmById: (id) => void;
 	filmBooking: filmInterface;
 	path: string,
-	component: React.ComponentType<any>;
-	// Component: React.ComponentType<any>;
-}
+	}
 
 type JointBookingProps = ChildComponentProps & BookingProps; 
 
 const BookingPage: React.FC<JointBookingProps> = ({
+
 	getFilmById,
-	filmBooking: {film, loading},
+	filmBooking,
 	match,
-	history,
-	component,
+	location,
+	history
 }) => { 
+
 	useEffect(() => {
 		getFilmById(match.params.id)
-	}, []);
+	}, [getFilmById, match.params.id]);
 	
+	const { film } = filmBooking;
+
 	return (
 		<Fragment>
 			<div>
-			{film ? <CheckoutFilm/> : <p>please wait</p> }
+				{ film ? <CheckoutFilm
+					match={match}
+					location={location}
+					history={history}
+				 /> : <p>please wait</p> }
 			</div>
 		<div className='checkout-page'>
           * Please use the following test credit card for payments  
@@ -46,6 +51,4 @@ const mapStateToProps = state => ({
 	filmBooking: state.film
 });
 
-export default connect(mapStateToProps, { getFilmById  })(
-	withRouter(BookingPage)
-);
+export default connect(mapStateToProps, { getFilmById  })(BookingPage);

@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createFilm } from '../actions/film';
 import './CreateFilm.css';
@@ -30,7 +30,7 @@ const CreateFilm: React.FC<CreateFilmProps> = ({
 	({
 		title: '',
 		date: '',
-		filmtime: '15:00',
+		filmtime: '',
 		cinema: '',
 		image: '',
 		ticketPrice: 8,
@@ -124,6 +124,4 @@ const mapStateToProps = state => ({
 	createFilm: state.film
 });
 
-export default connect(mapStateToProps, { createFilm })(
-	withRouter(CreateFilm)
-	);
+export default connect(mapStateToProps, { createFilm })(CreateFilm);
