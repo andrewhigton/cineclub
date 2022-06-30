@@ -10,7 +10,7 @@
     "server": "nodemon server --ignore client",
     "client": "npm start --prefix client",
     "build": "react-scripts build",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "andrew higton",
   "license": "ISC",

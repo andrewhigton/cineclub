@@ -15,9 +15,6 @@ import Spinner from '../spinner/Spinner';
 import '../checkout-film/checkoutfilm.css'
 import axios from 'axios';
 
-
-// const ifValidCardElement = (card: StripeCardElement | null): card is StripeCardElement => card === null;  
-
 interface TicketFilmTypes {
 	filmData: filmType;
 	ticketData: ticketType;
@@ -129,7 +126,7 @@ const paymentHandler = async (e: FormEvent<HTMLFormElement>) => {
 					   },
 					 }}
 					/>
-					<button className='checkout-button' disabled={isProcessingPayment}>Pay Now</button>
+					<button className='checkout-button' 	disabled={isProcessingPayment}>Pay Now</button>
 				</form>
 			</div>
 
