@@ -23,7 +23,8 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.3.3",
     "express": "^4.17.1",
-    "body-parser":"*",
+    "body-parser": "*",
+    "cors": "^2.8.5",
     "express-validator": "^6.9.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
@@ -43,5 +44,16 @@
     "reselect": "^4.1.6",
     "styled-components": "^5.3.5",
     "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "body-parser": "^1.19.0",
+    "compression": "1.7.4",
+    "concurrently": "^5.3.0",
+    "dotenv": "7.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^2.0.7",
+    "stripe": "6.28.0",
+    "web-vitals": "^2.1.2"
   }
 }
