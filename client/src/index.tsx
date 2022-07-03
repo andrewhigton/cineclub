@@ -11,8 +11,6 @@ import { store, persistor } from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// const stripePromise = loadStripe(`${process.env.PUBLISHABLE_KEY}`);
-//only works here, why? 
 const stripePromise = loadStripe('pk_test_GxoLwpaJRAn1kdTQGlL8EwZa00qqtVHbM3');
 
 ReactDOM.render(
