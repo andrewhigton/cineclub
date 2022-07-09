@@ -42,6 +42,10 @@ const http = require('http');
 // app.listen(PORT, () => console.log(`Server started on ${PORT}`));
 
 //how proshop does it
+
+
+dotenv.config()
+
 connectDB();
 
 const app = express();
