@@ -9,15 +9,14 @@ import './Dashboard.css';
 
 interface DashTicketsProps {
     user: userType;
-    film: number;
 }
 
-const DashboardTickets: React.FC<DashTicketsProps> = ({ user, film }) => {
-  
-  const { tickets } = user
+const DashboardTickets: React.FC<DashTicketsProps> = ({ user }) => {
 
+  const { tickets } = user
+  
   return (
-     tickets && film === null ? <Spinner /> : 
+     tickets === null ? <Spinner /> : 
         <Fragment>
         {user.tickets.length === 0 ? 
           (
@@ -38,7 +37,6 @@ const DashboardTickets: React.FC<DashTicketsProps> = ({ user, film }) => {
              key={item._id}>
              <Ticket
                ticket={item}
-               filmtime={film}
              />
              </div> 
         ))}
@@ -54,7 +52,7 @@ const DashboardTickets: React.FC<DashTicketsProps> = ({ user, film }) => {
 
 const mapStateToProps = state => ({
   user: state.auth.user,
-  film: state.film.film.filmtime,
+  // film: state.film.film,
 });
 
 export default connect(mapStateToProps)(DashboardTickets); 

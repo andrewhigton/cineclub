@@ -37,11 +37,10 @@ const UserSchema = new mongoose.Schema({
           type:  Date,
           required: true
         },
-        //isnt this needed?
-        // time: {
-        //  type:  Date,
-        //  required: true
-        // },
+        filmtime: {
+          type: String,
+          required: false
+        },
         cost: {
           type: Number,
           required: true

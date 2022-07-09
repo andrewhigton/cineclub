@@ -34,22 +34,19 @@ export const updateUserTickets = (formData: ticketType, history ) => async (disp
   }
 };
 
-
-
 // Load User
 export const loadUser = () => async (dispatch: Dispatch<ActionUser>) => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
   }
   
-  
+
 try {
     const res = await axios.get('/api/auth');
     dispatch({
       type: ActionType.USER_LOADED,
       payload: res.data
     })
-
 } catch (err) {
           alert('Please check your email and password')
           dispatch({

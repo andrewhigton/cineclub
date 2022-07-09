@@ -4,16 +4,16 @@ export type ticketType = {
         cinema: string,
         cost: number,
         crowdfundTarget: number,
-        date: string,
+        date: any,
         filmtime?: number,
         numberOfTickets: number,
-        ticketPrice: string,
+        ticketPrice: number,
         title: string,
         totalsoFar: number
   }
 
 export type userType =  {
-    _id: number,
+    _id: any,
     name: string,
     email: string,
     loading: boolean,
@@ -21,40 +21,26 @@ export type userType =  {
       cinema: string,
         cost: number,
         crowdfundTarget: number,
-        date: string,
+        date: any,
         filmtime?: number,
         numberOfTickets: number,
-        ticketPrice: string,
+        ticketPrice: number,
         title: string,
         totalsoFar: number,
-        _id?: string | number | null 
+        _id?: any 
     }>
   };
 
-export type filmsType = Array<{
-          cinema: string,
-          crowdfundTarget: number,
-          date: number,
-          filmtime: number,
-          image: string,
-          ticketPrice: number,
-          title: string,
-          totalsoFar: number,
-          user: number,
-          __v: number,
-          _id: number,
-        }>; 
-
 export interface filmInterface {
         film: {
-        _id: string,
+        _id: any,
         user: string,
         title: string,
-        date: string,
+        date: any,
         filmtime: number,
         cinema: string,
         image: string,
-        ticketPrice: string,
+        ticketPrice: number,
         crowdfundTarget: number,
         totalsoFar: number
       };
@@ -62,17 +48,91 @@ export interface filmInterface {
     }
 
 export type filmType = {
-        _id: string,
+        _id: any,
         user: string,
         title: string,
-        date: string,
+        date: any,
         filmtime: number,
         cinema: string,
         image: string,
-        ticketPrice: string,
+        ticketPrice: number,
         crowdfundTarget: number,
         totalsoFar: number
       };
+
+export interface FilmsType {
+    film: {
+        films:Array<{
+            _id: any, 
+            user: string,
+            title: string,
+            date: any,
+            filmtime: number,
+            cinema: string,
+            image: string,
+            ticketPrice: number,
+            crowdfundTarget: number,
+            totalsoFar: number
+            }>;
+        loading: boolean;
+        };
+    };
+
+
+export interface FilmsMapType {
+
+        films:Array<{
+            _id: any, 
+            user: string,
+            title: string,
+            date: any,
+            filmtime: number,
+            cinema: string,
+            image: string,
+            ticketPrice: number,
+            crowdfundTarget: number,
+            totalsoFar: number
+            }>;
+        loading: boolean;
+        };
+
+
+export type filmsDashboardType = Array<{
+            _id: any, 
+            user: string,
+            title: string,
+            date: any,
+            filmtime: number,
+            cinema: string,
+            image: string,
+            ticketPrice: number,
+            crowdfundTarget: number,
+            totalsoFar: number,
+            }>;
+   
+
+export interface FilmProps {
+  film: filmType,
+  index: number,
+}
+
+
+ export interface FilmsProps {
+    films: Array<{
+            _id: any, 
+            user: string,
+            title: string,
+            date: any,
+            filmtime: number,
+            cinema: string,
+            image: string,
+            ticketPrice: number,
+            crowdfundTarget: number,
+            totalsoFar: number
+            }>;
+            loading: boolean;
+    };
+
 
 export interface DashboardProps {
       auth: AuthProps, 
@@ -83,12 +143,11 @@ export interface AuthProps {
     user: userType, 
     loading: boolean, 
 }
-
-export interface FilmProps {
-    films: filmsType, 
-    filmLoading: boolean, 
+  
+export interface DashboardProps {
+    film: FilmProps,
+    loading: boolean, 
 }
-
    
 export interface ChildComponentProps extends RouteComponentProps<any> {
   match: any;

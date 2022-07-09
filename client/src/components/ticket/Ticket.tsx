@@ -7,19 +7,13 @@ const moment = require('moment');
 
 interface TicketProps {
     ticket: ticketType;
-    filmtime?: number;
 }
 
-interface FilmProps {
-	filmtime: number
-}
-
-type JointProps = TicketProps & FilmProps
-
-const Ticket: React.FC<JointProps> = ({ ticket, filmtime }) => {
+const Ticket: React.FC<TicketProps> = ({ ticket }) => {
 const { title, 
 		numberOfTickets,
 		date,
+		filmtime,
 		cost, 
 		cinema, 
 		crowdfundTarget, 

@@ -1,29 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { FilmsProps, FilmsType, FilmsMapType } from '../../utils/componentTypes';
 import Film from './Film';
 import '../../App.css';
 import './Films.css';
 
 
-interface FilmsProps {
-	film: {
-		films:Array<{
-	        _id: number, 
-		    title: string,
-		    date: number,
-		    filmtime: number,
-		    cinema: string,
-		    image: string,
-		    ticketPrice: number,
-		    crowdfundTarget: number,
-		    totalsoFar: number
-    		}>;
-    	loading: boolean;
-		};
+interface FilmsListProps {
+	film: FilmsMapType
 	};
-
-const Films: React.FC<FilmsProps> = ({ 
+	
+const Films: React.FC<FilmsListProps> = ({ 
 	film: {films, loading} 
 	}) => {
 	if (films === null) return null;
@@ -35,6 +23,7 @@ const Films: React.FC<FilmsProps> = ({
 	    	</div>	
 	    
 	    	<div className="row justify-content-center">
+		  
 		    	{films.slice(0,8).map((item, index) => {
 					return <Film
 					index={index}
@@ -43,6 +32,7 @@ const Films: React.FC<FilmsProps> = ({
 		    		/>
 	          	})
 	           }        
+	       
             </div>
             <Link to='/film' className="view-all-link">
            		<p>View all</p>

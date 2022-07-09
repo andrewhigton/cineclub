@@ -22,6 +22,8 @@ const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({
 
   const { film } = films;
 
+  console.log(film)
+
   const [filmData, setFilmData] = useState<filmType>({
     _id: film._id,
     user: film.user,
@@ -41,6 +43,7 @@ const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({
     title: film.title,
     ticketPrice: film.ticketPrice,
     date: film.date,
+    filmtime: film.filmtime,
     cinema: film.cinema,
     crowdfundTarget: film.crowdfundTarget,
     totalsoFar: film.totalsoFar,
@@ -51,7 +54,7 @@ const CheckoutFilm: React.FC<JointCheckoutFilmProps> = ({
    
     const onChange = (e) => {   
     let ticketsTotal = parseInt(e.target.value);
-    let bookingTotal = parseInt(film.ticketPrice) * parseInt(e.target.value); 
+    let bookingTotal = (film.ticketPrice) * parseInt(e.target.value); 
     let totalTicketsBooked = film.totalsoFar + parseInt(e.target.value)
     setBookingCost(bookingTotal)
     setTotalSoFar(totalTicketsBooked);

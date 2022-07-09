@@ -19,7 +19,6 @@ const film = (
   state = initialState,
   action: ActionFilms,
   ) => {
-        // console.log('action ', state.film)
         let payload;  
         if(action.payload) {
           payload = action.payload; 
@@ -63,34 +62,3 @@ const film = (
     }
 
   export default film;
-
-
-// import { setCartFilmItems } from './cart.action';
-
-// import { FilmItem } from './cart.types';
-
-// export type CartState = {
-
-//   readonly cartItems: CartItem[];
-// };
-
-// export const CART_INITIAL_STATE: CartState = {
-//   cartItems: [],
-// };
-
-// export const cartReducer = (
-//   state = CART_INITIAL_STATE,
-//   action: AnyAction
-// ): CartState => {
-  
-//   }
-//   //what does this do?
-//   if (setCartItems.match(action)) {
-//     return {
-//       ...state,
-//       cartItems: action.payload,
-//     };
-//   }
-
-//   return state;
-// };
