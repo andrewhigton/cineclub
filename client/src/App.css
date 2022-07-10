@@ -12,11 +12,9 @@
 }
 
 
-
 body {
-  /*font-family: 'Raleway', sans-serif;*/
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #D3D3D3;
   height: 100%;
   -webkit-text-size-adjust: none;
   overflow-x: hidden;
@@ -43,7 +41,6 @@ a {
   margin-left: 30px;
   margin-top: 4vh;
   margin-bottom: 30px; 
-  /*font-family: 'Raleway', sans-serif;*/
 }
 
 body .all-screenings {
@@ -200,8 +197,6 @@ body h1 {
 
 @media screen and (max-width: 440px) {  
   
-
-
 .social-links {
     margin-left: -5vw;
   }
@@ -340,66 +335,4 @@ body .inset-text {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.guide-link {
-  position: fixed;
-  margin-top: 35px;
-}
-
-ul {
-  list-style: none;
-}
-
-.btn {
-  color: white;
-  display: inline-block;
-  background: var(--light-color);
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  margin-left: 1.4rem;
-  margin-top: 1.7rem;
-  width: auto;
-  margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
-  outline: none;
-}
-
-.no-account {
-  font-size: 25px;
-  margin-left: 1.3rem;
-  margin-top: 1.7rem;
-}
-
-
-img {
-    width: 264px;
-    object-fit: cover;
-    max-height: 148px;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.create-film-title {
-  margin-left: 2vw;
 }

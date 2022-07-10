@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Spinner from '../spinner/Spinner';
 import Film from '../films/Film';
-import { userType, filmType, FilmProps, filmsDashboardType } from '../../utils/componentTypes';
+import { userType, filmsDashboardType } from '../../utils/componentTypes';
 import '../../App.css';
 import './Dashboard.css';
 

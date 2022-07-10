@@ -1,13 +1,13 @@
 .tickets {
   display: flex;
-  /*align-items: center;*/
   color: hsl(200, 10%, 30%);
-  background-color: grey;
+  background-color: white;
   background-image: linear-gradient(to bottom left, $grey-dark, $grey);
   margin-top: 50px;
   margin-left: 9px;
   width: 280px;
   text-align: center;
+  border: solid 1pt #864747;
 }
 
 .ticket {
@@ -15,7 +15,7 @@
     text-align: center;
     width: 280px;
     min-width: 280px;
-    color: white;
+    color: black;
     margin: initial;
     margin-top: -3.5vh;
     margin-bottom: 2vh;
@@ -23,7 +23,6 @@
 
 
 .ticket-stub {
-  /*margin-top: -1vh;*/
   height: 70px;
   width: auto;
   margin-bottom: 20px;

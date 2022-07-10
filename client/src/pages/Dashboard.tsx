@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import Footer from '../components/footer/Footer';
 import Spinner from '../components/spinner/Spinner'
 import { loadFilms } from '../actions/film';
-import { AuthProps, FilmProps, FilmsProps } from '../utils/componentTypes';
+import { AuthProps, FilmsProps } from '../utils/componentTypes';
 import DashboardTickets from '../components/user-dashboard/Dashboard-Tickets';
 import DashboardFilms from '../components/user-dashboard/Dashboard-Films';
 

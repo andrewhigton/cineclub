@@ -12,7 +12,7 @@ type FilmProps = {
 
 const Film: React.FC<FilmProps> = ({ film, index }) => {
 
-const { _id, user, title,date,filmtime,cinema,image,ticketPrice,crowdfundTarget,totalsoFar } = film;
+const { _id, title,date,filmtime,cinema,image,ticketPrice,crowdfundTarget,totalsoFar } = film;
 const time = moment(date)
 const formattedDate = time.format('D MMMM YYYY');
 

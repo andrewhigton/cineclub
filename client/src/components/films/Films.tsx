@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { FilmsProps, FilmsType, FilmsMapType } from '../../utils/componentTypes';
+import { FilmsMapType } from '../../utils/componentTypes';
 import Film from './Film';
 import '../../App.css';
 import './Films.css';

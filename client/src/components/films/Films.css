@@ -7,8 +7,7 @@
   justify-content: center; 
   margin: auto;
   margin-top: -12vh;
-  background-color: white;
-  /*border: 5px solid black;*/
+  background-color: #D3D3D3;
 }
 
 .films-list {
@@ -23,22 +22,18 @@
   
 }
 
+
 .all-screenings-title {
-  /*text-transform: uppercase;*/
+  color: #864747;
   font-size: 25px;
-  /*font-family: 'Raleway', sans-serif;*/
-  /*color: #864747;*/
-  /*left: 100px;*/
-  /*margin-left: 27vw;*/
   margin-left: 20px;
   margin-top:4vh;
   margin-bottom: 8vh;
-  /*position: ;*/
 }
 
 .film-page-title {
   text-transform: uppercase;
-  font-size: 35px;
+  font-size: 25px;
   font-family: 'Raleway', sans-serif;
   color: #864747;
   text-align: center;
@@ -58,6 +53,8 @@
     margin-top: -3.5vh;
     margin-bottom: 7vh;
     margin-left: 20px;
+    border-top: dashed white 6pt;
+    border-bottom: dashed white 6pt;
 }
 
 .view-all-link {
@@ -79,9 +76,7 @@
   margin: auto;
   margin-top: 30px;
   margin-bottom: 25px;
-  /*margin-right: 3vw;*/
-
-}
+ }
 
 
 .your-film-header {
@@ -123,7 +118,7 @@
 }
 
 .film-border {
-  background: grey;
+  background: black;
 }
 
 /*.film-border::before {
@@ -146,9 +141,9 @@
   height: 8px;
   background: white;
   box-shadow: 4px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
-}*/
+}
 
-/*.film-border div {
+.film-border div {
   width: 90px;
   height: 60%;
   top: 50%;
