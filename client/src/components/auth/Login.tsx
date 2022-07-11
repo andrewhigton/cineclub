@@ -60,7 +60,6 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 		            name="password"
 		            value={password}
 		          	onChange={e => onChange(e)} 
-		            // minlength="4"
 		          />
 		        </div>
 		        <input type="submit" className="btn" value="Login" />
@@ -68,7 +67,7 @@ const Login:React.FC<LoginProps> = ( { login, isAuthenticated } ) => {
 		      <p className="lead">
 		        Don't have an account? <Link to="/register">Sign Up</Link>
 		      </p>
-		      <p>* Example account: email: andrew@test.com password: 1234 *</p>
+		      <p className="lead">* Example account: email: andrew@test.com password: 1234 *</p>
 		   </div>
 }
 

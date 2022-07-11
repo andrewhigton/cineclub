@@ -28,26 +28,13 @@ const items = [
     caption: 'Spinal Tap',
     location: 'Genesis Cinema, London, Jan 2 2021'
   },
-  // {
-  //   src: 'thinred.png',
-  //   altText: 'The Thin Red Line',
-  //   caption: 'The Thin Red Line',
-  //   location: 'Chester Storyhouse , Nov 4 2020'
-  // },
-  //   {
-  //   src: 'odyssey.jpeg',
-  //   altText: '2001: A Space Odyssey',
-  //   caption: '2001: A Space Odyssey',
-  //   location: 'Picturehouse Bristol, Apr 3 2021'
-  // }
+    {
+    src: 'odyssey.jpeg',
+    altText: '2001: A Space Odyssey',
+    caption: '2001: A Space Odyssey',
+    location: 'Picturehouse Bristol, Apr 3 2021'
+  }
 ];
-
-// so create an interface for props? 
-
-// interface items {
-//     firstName: string;
-//     lastName: string;
-// }
 
 const FilmCarousel: React.FC = (props) => {
  
@@ -81,6 +68,7 @@ const FilmCarousel: React.FC = (props) => {
       >
         <img 
         className="img-slide" 
+
         src={item.src} 
         alt={item.altText} 
         />
@@ -101,7 +89,6 @@ const FilmCarousel: React.FC = (props) => {
       previous={previous}
     >
       <CarouselIndicators 
-      className='indicator'
       items={items} 
       activeIndex={activeIndex} 
       onClickHandler={goToIndex} />

@@ -1,16 +1,17 @@
 import React from 'react';
 import '../../App.css';
 import './howitworks.css';
+import FilmCarousel from '../carousel/Carousel';
 
 const HowItWorks = () => {
 
 	return (
 		<section className="landing dark-overlay">
 		<div className="">
-		<img src='br2049.jpeg' 
-		alt='' 
-		className=''/>
-	      <div className="how-it-works">
+			<div className="carousel">
+				<FilmCarousel/>				    
+			</div>	
+	      	<div className="how-it-works">
 				<h2>Crowdfunded cinema</h2>
 					<div className="how-it-works-text">
 					<ul>Buying for a screening someone has created</ul>
@@ -27,7 +28,7 @@ const HowItWorks = () => {
 					<p></p>
 					<p></p>
 	       			</div>
-	       </div>
+	       	</div>
 	    </div>
 	    
 	    </section>
