@@ -201,6 +201,16 @@ body h1 {
     margin-left: -5vw;
   }
 
+body .navbar-brand {
+    font-size: 1.1em;  
+  }
+
+.navbar-toggler-icon {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+
 }
 
 
@@ -214,10 +224,16 @@ body h1 {
   body .social-links {
     margin-right: 50px !important;
   }
+
+  .navbar-toggler-icon {
+  width: 1em;
+  height: 1em;
+  }
   
   body .navbar-brand {
-    font-size: 1.1em;  
+    font-size: 1em;  
   }
+
 
   body h1 {
   font-size: 0.7em;
@@ -239,13 +255,19 @@ body h1 {
 @media screen and (max-width: 362px) {  
 
 body .navbar-brand {
-    font-size: 1em;  
+    font-size: 0.9em;  
   }
+
+.navbar-toggler-icon {
+  width: 0.9em;
+  height: 0.9em;
+}
 
 body .inset-text {
   left: 16px;
   top: 400px;
 }
+
 
 .film {
     margin-left: -5px !important;
@@ -280,6 +302,11 @@ body .inset-text {
   body .navbar-brand {
     font-size: 0.9em;  
   }
+
+.navbar-toggler-icon {
+  width: 0.8em;
+  height: 0.8em;
+}
 
 
  body h1 {

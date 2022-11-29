@@ -7,6 +7,16 @@
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
 	width: 100%;	
-    margin-left: 0.5vw;
+    margin-left: 0vw;
     margin-top: 0vh;
+    
 }
+
+.indicator {
+	margin-left: 45% !important;
+}
+
+.carousel-item {
+	transition: transform 0.2s ease-in-out;
+}
+

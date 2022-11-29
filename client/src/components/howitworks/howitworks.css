@@ -4,13 +4,24 @@
 	line-height: 2.6;
 }
 
+.how-it-works-title {
+    color: #864747 !important;
+    font-family: Limelight;
+    font-size: 1.5rem;
+    margin-top: 40px;
+}
+
 .how-it-works-text {
 	font-size: 20px;
+	color: black;
 	margin-left: -30px;
+	margin-bottom: 150px;
+/*	color: #864747 !important;*/
+    font-family: Limelight;
 }
 
 ul {
-	text-decoration: underline;
+/*	text-decoration: underline;*/
 }
 
 img {
