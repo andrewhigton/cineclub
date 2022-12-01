@@ -8,7 +8,6 @@ import {
 } from 'reactstrap';
 import './carousel.css';
 
-// const items: {src: string, altText: string, caption: string, location: string}[] = [
 const items = [
   {
     src: 'mood.jpg',

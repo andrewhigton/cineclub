@@ -1,28 +1,34 @@
 .how-it-works {
-	margin-left: 3vw;
-	margin-bottom: 20px;
+	margin-left: 1vw;
+	margin-bottom: 200px;
 	line-height: 2.6;
 }
 
 .how-it-works-title {
     color: #864747 !important;
     font-family: Limelight;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.how-it-works-text-title {
+	margin-left: -1.5vw;
+	font-size: 1.5rem;
+	color: black;
+	font-family: Limelight;
+	line-height: 35px;
+	margin-bottom: 60px;
 }
 
 .how-it-works-text {
-	font-size: 20px;
+	font-family: Helvetica;
+	font-size: 0.7em;
 	color: black;
-	margin-left: -30px;
-	margin-bottom: 150px;
-/*	color: #864747 !important;*/
-    font-family: Limelight;
+	margin-left: 1vw;
+	line-height: 30px;
 }
 
-ul {
-/*	text-decoration: underline;*/
-}
 
 img {
 	width: 1500px;

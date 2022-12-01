@@ -13,21 +13,22 @@ const HowItWorks = () => {
 			</div>	
 	      	<div className="how-it-works">
 				<h2 className='how-it-works-title'>Crowdfunded cinema</h2>
+					<ol className='how-it-works-text-title'> Buying tickets for a screening another user has created
 					<div className="how-it-works-text">
-					<ul className='how-it-works-title'>Buying tickets for a screening another user has created</ul>
-					<p></p>
-					<ul>Browse our films, find one near you, book your tickets</ul>
-					<ul>Once the required number of tickets are sold, the screening is confirmed and your card will be charged</ul>
-					<ul className='how-it-works-title'>Create your own screening</ul>
-					<p></p>
-					<p></p>
-					<ul>Book the film, date, time and place </ul>
-					<ul>Buy your tickets </ul>
-					<ul>Invite all your friends, advertise on Facebook etc.</ul>
-					<ul>Once the screening reaches the required number of tickets, the screening is confirmed</ul>
-					<p></p>
-					<p></p>
-	       			</div>
+						<li>Browse our films, find one near you, book your tickets</li>
+						<li>Once the required number of tickets are sold, the screening is confirmed and your card will be charged</li>
+					</div>
+					</ol>
+					<div >
+					<ol className='how-it-works-text-title'>Create your own screening
+					<div className="how-it-works-text">
+						<li>Book the film, date, time and place </li>
+						<li>Buy your tickets </li>
+						<li>Invite all your friends, advertise on Facebook, Instagram, Twitter</li>
+						<li>Once the screening reaches the required number of tickets, the screening is confirmed</li>
+					</div>
+					</ol>
+					</div>
 	       	</div>
 	    </div>
 	    
