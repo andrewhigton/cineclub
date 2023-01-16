@@ -35,7 +35,8 @@ password: 1234
 
 ### Landing page: ###
 
-![Screenshot](Screenshot1.jpg)
+![image](https://user-images.githubusercontent.com/22149360/212729575-870198b2-b1d6-40e0-a9f7-7fc64dc3dd9b.png)
+
 
 ### Films page: ###
 
