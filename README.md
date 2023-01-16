@@ -39,12 +39,11 @@ password: 1234
 
 ### Films page: ###
 
-![Screenshot](Screenshot2.jpg)
+![image](https://user-images.githubusercontent.com/22149360/212730259-a9eb0b8e-d177-41aa-a99c-d4e327892705.png)
 
 ### Bookings page: ###
 
-![Screenshot](Screenshot2.jpg)
-
+![image](https://user-images.githubusercontent.com/22149360/212730328-e2c8da38-3b9d-4788-b8f7-4b9b03597e09.png)
 
 ## Credits ##
 
