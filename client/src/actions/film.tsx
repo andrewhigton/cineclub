@@ -105,21 +105,3 @@ export const updateFilm = (formData) => async (dispatch: Dispatch<ActionFilms>) 
     });
   };
 }
-
-// export const deleteFilm = id => async dispatch => {
-//   try {
-//     const res = await axios.delete(`/api/profile/tickets/${id}`);
-
-//     dispatch({
-//       type: 'DELETE_FILM',
-//       payload: res.data
-//     });
-
-//     alert('Tickets Removed', 'success');
-//   } catch (err) {
-//     dispatch({
-//       type: 'FILM_ERROR',
-//       payload: { msg: err.response.statusText, status: err.response.status }
-//     });
-//   }
-// };

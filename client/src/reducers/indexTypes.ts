@@ -32,10 +32,6 @@ export type ActionFilms =
   | ClearFilm
   | FilmError;
 
-// interface loadUser {
-//   type: ActionType.USER_LOADED;
-//   payload: string[];
-// }
 
 interface register {
   type: ActionType.REGISTER_SUCCESS;
@@ -71,11 +67,6 @@ interface logout {
   type: ActionType.LOGOUT;
   payload: null;
 }
-
-// interface login {
-//   type: ActionType.USER_LOADED;
-//   payload: string[];
-// }
 
 type registerFail = {
   type: ActionType.REGISTER_FAIL;

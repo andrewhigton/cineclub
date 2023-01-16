@@ -52,7 +52,6 @@ const DashboardTickets: React.FC<DashTicketsProps> = ({ user }) => {
 
 const mapStateToProps = state => ({
   user: state.auth.user,
-  // film: state.film.film,
 });
 
 export default connect(mapStateToProps)(DashboardTickets); 

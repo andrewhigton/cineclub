@@ -139,6 +139,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(CheckoutFilm); 
-
-// const film = useSelector((state) => state.film.film)
-// const loading = useSelector((state) => state.film.loading)

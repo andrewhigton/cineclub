@@ -19,7 +19,7 @@ const HowItWorks = () => {
 						<li>Once the required number of tickets are sold, the screening is confirmed and your card will be charged</li>
 					</div>
 					</ol>
-					<div >
+					
 					<ol className='how-it-works-text-title'>Create your own screening
 					<div className="how-it-works-text">
 						<li>Book the film, date, time and place </li>
@@ -28,7 +28,6 @@ const HowItWorks = () => {
 						<li>Once the screening reaches the required number of tickets, the screening is confirmed</li>
 					</div>
 					</ol>
-					</div>
 	       	</div>
 	    </div>
 	    

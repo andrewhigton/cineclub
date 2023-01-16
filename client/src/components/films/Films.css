@@ -120,36 +120,3 @@
 .film-border {
   background: black;
 }
-
-/*.film-border::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 0px;
-  width: 8px;
-  height: 8px;
-  background: white;
-  box-shadow: 14px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
-}
-
-.film-border::after {
-  content: "";
-  position: absolute;
-  bottom: 4px;
-  left: 0px;
-  width: 8px;
-  height: 8px;
-  background: white;
-  box-shadow: 4px 0px 0px white, 28px 0px 0px white, 42px 0px 0px white, 56px 0px 0px white, 70px 0px 0px white, 84px 0px 0px white, 98px 0px 0px white, 112px 0px 0px white, 126px 0px 0px white, 140px 0px 0px white, 154px 0px 0px white, 168px 0px 0px white, 182px 0px 0px white, 196px 0px 0px white, 210px 0px 0px white, 224px 0px 0px white, 238px 0px 0px white, 252px 0px 0px white, 266px 0px 0px white, 280px 0px 0px white, 294px 0px 0px white, 308px 0px 0px white;
-}
-
-.film-border div {
-  width: 90px;
-  height: 60%;
-  top: 50%;
-  transform: translate(0%, -50%);
-  margin-left: 4px;
-  box-shadow: inset 0px 0px 10px 0px #b7410e;
-  display: inline-block;
-  margin-top: 50px;
-}*/
