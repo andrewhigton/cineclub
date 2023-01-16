@@ -31,18 +31,19 @@ username: andrew@test.com
 password: 1234 
 
 
-## Landing page: ##
+## Screenshots: ##
 
-![Alt text](http://full/path/to/Screenshot1.jpg)
+### Landing page: ###
 
-## Films page: ##
+![Screenshot](Screenshot1.jpg)
 
-![Alt text](http://full/path/to/Screenshot2.jpg)
+### Films page: ###
 
-## Bookings page: ##
+![Screenshot](Screenshot2.jpg)
 
+### Bookings page: ###
 
-![Alt text](http://full/path/to/Screenshot3.jpg)
+![Screenshot](Screenshot2.jpg)
 
 
 ## Credits ##
