@@ -8,7 +8,7 @@ The idea comes the lack of opportunity to see older and favourite films on the b
 
 I built it using React, Redux, Express, MongoDB, Stripe and Typescript 
 
-Try it [link](https://saturdaycinemaclub.herokuapp.com/) here. Users can log in with an example account to see booked tickets, created films etc:
+Try it [here](https://saturdaycinemaclub.herokuapp.com/). Users can log in with an example account to see booked tickets, created films etc:
 
 username: andrew@test.com 
 password: 1234 
