@@ -2,18 +2,18 @@
 
 ## Description ## 
 
-An app for crowd-funded cinema, where users create a film or screening, post it on the website, share on social media for friends, where they and other users can buy tickets. Once the screening reaches a certain number, the screening is booked at the cinema and all ticket buyers are booked in.          
+An app for crowd-funded cinema, where users create a film or screening, post it on the website, share on social media for friends, where they and other users can buy tickets. Once the screening reaches a certain number, the screening would then be confirmed at the cinema and all ticket buyers are booked in.          
 
 The idea comes the lack of opportunity to see older and favourite films on the big screen.      
 
 I built it using React, Redux, Express, MongoDB, Stripe and Typescript 
 
-Try it here and log in with an example account to see booked tickets, created films etc:
-
-https://saturdaycinemaclub.herokuapp.com/
+Try it [link](https://saturdaycinemaclub.herokuapp.com/) here. Users can log in with an example account to see booked tickets, created films etc:
 
 username: andrew@test.com 
 password: 1234 
+
+https://saturdaycinemaclub.herokuapp.com/
 
 ## Other features I aim to add include: ##
 
